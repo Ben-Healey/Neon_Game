@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\Floor_Trig.cs" />
      <Compile Include="Assets\Scripts\Light_Script.cs" />
      <Compile Include="Assets\Scripts\Light_Script_Test.cs" />
+     <Compile Include="Assets\Scripts\Spotted_Test.cs" />
      <Compile Include="Assets\Unity Store Stuff\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" />
      <Compile Include="Assets\Unity Store Stuff\Standard Assets\Characters\FirstPersonCharacter\Scripts\HeadBob.cs" />
      <Compile Include="Assets\Unity Store Stuff\Standard Assets\Characters\FirstPersonCharacter\Scripts\MouseLook.cs" />
@@ -96,7 +97,6 @@
      <Compile Include="Assets\Unity Store Stuff\Standard Assets\Utility\TimedObjectDestructor.cs" />
      <Compile Include="Assets\Unity Store Stuff\Standard Assets\Utility\WaypointCircuit.cs" />
      <Compile Include="Assets\Unity Store Stuff\Standard Assets\Utility\WaypointProgressTracker.cs" />
-     <None Include="Assets\Free Sci-Fi Track\ReadMe.txt" />
      <None Include="Assets\Unity Store Stuff\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Shaders\Test_Shader.shader" />
      <None Include="Assets\Unity Store Stuff\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
