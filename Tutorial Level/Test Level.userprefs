@@ -1,0 +1,14 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Alarm_Script.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Spotted_Test.cs" Line="11" Column="27" />
+      <File FileName="Assets\Scripts\Alarm_Script.cs" Line="18" Column="42" />
+      <File FileName="Assets\Scripts\Light_Script.cs" Line="21" Column="30" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
