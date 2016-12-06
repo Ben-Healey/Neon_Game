@@ -17,4 +17,9 @@ public class Alarm_Script : MonoBehaviour {
 	{
 		Debug.Log ("Alarm System Will Go Off!!!");
 	}
+
+	void OnTriggerEnter(Collider other)
+	{
+		
+	}
 }
