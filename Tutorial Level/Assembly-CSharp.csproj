@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Alarm_Script.cs" />
+     <Compile Include="Assets\Scripts\Crosshair_Script.cs" />
      <Compile Include="Assets\Scripts\Door_Test.cs" />
      <Compile Include="Assets\Scripts\Floor_Movement.cs" />
      <Compile Include="Assets\Scripts\Light Scripts\Light_Script.cs" />

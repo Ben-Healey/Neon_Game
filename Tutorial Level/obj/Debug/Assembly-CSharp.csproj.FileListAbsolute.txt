@@ -19,3 +19,5 @@ E:\Unity Projects\Test Level\Temp\bin\Debug\UnityEngine.Networking.xml
 E:\Unity Projects\Test Level\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 E:\Unity Projects\Test Level\obj\Debug\Assembly-CSharp.dll
 E:\Unity Projects\Test Level\obj\Debug\Assembly-CSharp.pdb
+E:\Git\Neon_Game\Tutorial Level\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+E:\Git\Neon_Game\Tutorial Level\obj\Debug\Assembly-CSharp.dll
