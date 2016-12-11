@@ -14,8 +14,6 @@ public class canMouseLook : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		character = this.transform.parent.gameObject;
-		Cursor.lockState = CursorLockMode.None;
-		Cursor.visible = false;
 	}
 
 	// Update is called once per frame
@@ -31,5 +29,7 @@ public class canMouseLook : MonoBehaviour {
 
 		transform.localRotation = Quaternion.AngleAxis (-mouseLook.y, Vector3.right);
 		character.transform.localRotation = Quaternion.AngleAxis (mouseLook.x, character.transform.up);
+		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;
 	}
 }

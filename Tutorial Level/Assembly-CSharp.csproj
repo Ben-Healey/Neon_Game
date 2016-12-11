@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\Light Scripts\Light_Script_Test.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\canMouseLook.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\playerMovement.cs" />
+     <Compile Include="Assets\Scripts\Player Scripts\player_stats.cs" />
      <Compile Include="Assets\Scripts\Shader_Switch.cs" />
      <Compile Include="Assets\Scripts\Spotted_Test.cs" />
      <Compile Include="Assets\Scripts\Triggers\Floor_Trig.cs" />
