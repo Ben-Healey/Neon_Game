@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class player_stats : MonoBehaviour {
-	string Colour;
+	public string Colour;
 	float health ;
 	// Use this for initialization
 	void Start () {
@@ -13,7 +13,11 @@ public class player_stats : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		
+	}
+	public string Get_Colour()
+	{
+		return Colour;
 	}
 
 	public void Store_Colour(string C)
