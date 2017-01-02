@@ -50,6 +50,7 @@
      <None Include="Assets\Shaders\Red_Shader.shader" />
      <None Include="Assets\Unity_Store_Stuff\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Unity_Store_Stuff\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
+     <None Include="Assets\Shaders\Blue_Shader.shader" />
      <None Include="Assets\Unity_Store_Stuff\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
      <None Include="Assets\Unity_Store_Stuff\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
  <Reference Include="UnityEditor.Advertisements">

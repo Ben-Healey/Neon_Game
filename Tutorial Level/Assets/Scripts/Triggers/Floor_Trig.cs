@@ -14,15 +14,13 @@ public class Floor_Trig : MonoBehaviour {
 
 	void Update(){
 		timeleft = timeleft + Time.deltaTime; 
-		//Debug.Log (timeleft);
-
 		if (timeleft >= 10 && transform.position.x >= 0) {
-			Debug.Log ("PLATFOM SHOULD APPEAR");
+		//	Debug.Log ("PLATFOM SHOULD APPEAR");
 			currentRenderer.enabled = true;
 			transform.Translate (Vector3.left * Time.deltaTime); 
 			}
 		if (transform.position.x == 0) {
-			Debug.Log ("PLATFOM SHOULD STOP");
+		//	Debug.Log ("PLATFOM SHOULD STOP");
 			transform.Translate (Vector3.left * 0);
 	}
 }

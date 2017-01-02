@@ -2,18 +2,29 @@
 using System.Collections;
 
 public class Shader_Switch : MonoBehaviour {
+	//Problem: Shader only change colour on the red object other objects arent effected in game world
+
+
 	Renderer rend;
 	public GameObject k;
-	IEnumerator switchBack(){
+	IEnumerator switchBack(string K){
 		yield return new WaitForSeconds (1);
 		Debug.Log ("Turning Back On");
-		rend.material.shader = Shader.Find("Custom/Test_Shader");
+		if (K == "Red Light") {
+			rend.material.shader = Shader.Find ("Custom/Red_Shader");
+		}
+		if (K == "Green Light") {
+			rend.material.shader = Shader.Find ("Custom/Green_Shader");
+		}
 	}
 
 	// Use this for initialization
 	void Start () {
 		rend = GetComponent<Renderer> ();
-		if (k.gameObject.name == "Red Light") {
+		if (k.gameObject.tag == "Red_Light") {
+			rend.material.shader = Shader.Find ("Standard");
+		}
+		if (k.gameObject.tag == "Green_Light") {
 			rend.material.shader = Shader.Find ("Standard");
 		}
 	}
@@ -21,12 +32,14 @@ public class Shader_Switch : MonoBehaviour {
 	public void switchOn(){
 		Debug.Log ("SHADER CHANGE");
 
-		rend.material.shader = Shader.Find ("Custom/Test_Shader");
+		rend.material.shader = Shader.Find ("Custom/Red_Shader");
 	}
 
-	public void switchoff(){
+	public void switchoff(string Colour){
+		string K = Colour;
 		Debug.Log ("Shader is Off");
+		Debug.Log ("K = " + K);
 		rend.material.shader = Shader.Find ("Standard");
-		StartCoroutine (switchBack ());
+		StartCoroutine (switchBack (K));
 	}
 }

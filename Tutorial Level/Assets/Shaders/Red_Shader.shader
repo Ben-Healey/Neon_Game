@@ -1,4 +1,4 @@
-﻿Shader "Custom/Test_Shader" {
+﻿Shader "Custom/Red_Shader" {
  Properties 
  {
   _ColourTint("Colour Tint", Color) = (1, 1, 1, 1)

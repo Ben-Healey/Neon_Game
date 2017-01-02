@@ -6,6 +6,9 @@ using System.Collections;
 [RequireComponent (typeof(CharacterController))]
 public class playerMovement : MonoBehaviour {
 
+	public Attributes Att_Script;
+	//float Speed_Test = Att_Script.Get_Player_Speed();
+
 	public float walkSpeed = 6.0f;
 	public float runSpeed = 11.0f;
 
