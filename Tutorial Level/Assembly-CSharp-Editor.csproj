@@ -53,6 +53,7 @@
      <None Include="Assets\Shaders\Blue_Shader.shader" />
      <None Include="Assets\Unity_Store_Stuff\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
      <None Include="Assets\Unity_Store_Stuff\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
+     <None Include="Assets\Shaders\CRT.shader" />
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>E:/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>

@@ -31,7 +31,7 @@ public class Crosshair_Script : MonoBehaviour {
 	void Update () {
 		Test_Ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 		Vector3 forward = transform.TransformDirection(Vector3.forward) * 10;
-		Debug.DrawRay (transform.position, forward, Color.green);
+		//Debug.DrawRay (transform.position, forward, Color.green);
 		Take_Func ();
 		Fire_Func ();
 		Puzzle ();

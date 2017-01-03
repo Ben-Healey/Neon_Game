@@ -4,7 +4,7 @@ using System.Collections;
 public class Spotted_Test : MonoBehaviour {
 	Light SpotL;
 //	float tick = 0;
-	public Alarm_Script A_Script;
+	private Alarm_Script A_Script;
 	IEnumerator ColourChange(){
 		yield return new WaitForSeconds (5);
 		SpotL.color = Color.red;
@@ -13,6 +13,7 @@ public class Spotted_Test : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		SpotL = GetComponentInChildren<Light> ();
+		A_Script = gameObject.GetComponent<Alarm_Script>();
 	}
 	
 	// Update is called once per frame

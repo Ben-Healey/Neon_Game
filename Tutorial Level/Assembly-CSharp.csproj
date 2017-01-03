@@ -53,15 +53,18 @@
      <Compile Include="Assets\Scripts\Floor_Movement.cs" />
      <Compile Include="Assets\Scripts\Light Scripts\Light_Script.cs" />
      <Compile Include="Assets\Scripts\Light Scripts\Light_Script_Test.cs" />
+     <Compile Include="Assets\Scripts\Light Scripts\Shader_Switch.cs" />
+     <Compile Include="Assets\Scripts\Menu Scripts\Boot_script.cs" />
+     <Compile Include="Assets\Scripts\Menu Scripts\CRT.cs" />
+     <Compile Include="Assets\Scripts\Menu Scripts\Menu_Script.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Crosshair_Script.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\canMouseLook.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\playerMovement.cs" />
-     <Compile Include="Assets\Scripts\Shader_Switch.cs" />
+     <Compile Include="Assets\Scripts\Player Scripts\player_stats.cs" />
      <Compile Include="Assets\Scripts\Spotted_Test.cs" />
      <Compile Include="Assets\Scripts\Triggers\Floor_Trig.cs" />
      <Compile Include="Assets\Scripts\Unused Scripts (Delete Later)\Col.cs" />
      <Compile Include="Assets\Scripts\Unused Scripts (Delete Later)\Ele.cs" />
-     <Compile Include="Assets\Scripts\player_stats.cs" />
      <Compile Include="Assets\Unity_Store_Stuff\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" />
      <Compile Include="Assets\Unity_Store_Stuff\Standard Assets\Characters\FirstPersonCharacter\Scripts\HeadBob.cs" />
      <Compile Include="Assets\Unity_Store_Stuff\Standard Assets\Characters\FirstPersonCharacter\Scripts\MouseLook.cs" />
@@ -113,6 +116,7 @@
      <None Include="Assets\Shaders\Blue_Shader.shader" />
      <None Include="Assets\Unity_Store_Stuff\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
      <None Include="Assets\Unity_Store_Stuff\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
+     <None Include="Assets\Shaders\CRT.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>E:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

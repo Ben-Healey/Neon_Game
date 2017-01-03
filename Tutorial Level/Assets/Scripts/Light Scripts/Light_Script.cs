@@ -8,7 +8,7 @@ public class Light_Script : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		TestLight = GetComponentInChildren<Light> ();
-		Debug.Log ("LIGHT IS OFF");
+		//Debug.Log ("LIGHT IS OFF");
 		TestLight.enabled = false;
 	}
 	
@@ -19,7 +19,7 @@ public class Light_Script : MonoBehaviour {
 	void OnCollisonEnter(Collider col){
 		Debug.Log ("col");
 		if (col.gameObject.name == "Player") {
-			Debug.Log ("LIGHT IS ON");
+		//	Debug.Log ("LIGHT IS ON");
 			TestLight.enabled = true;
 			Script.switchOn();
 		}
@@ -28,7 +28,7 @@ public class Light_Script : MonoBehaviour {
 	void OnTriggerEnter(Collider col) {
 		Debug.Log ("col");
 		if (col.gameObject.tag == "Player") {
-			Debug.Log ("LIGHT IS ON");
+	//		Debug.Log ("LIGHT IS ON");
 			TestLight.enabled = true;
 			Script.switchOn();
 		}
