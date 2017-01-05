@@ -4,14 +4,14 @@ using UnityEngine.UI;
 public class Boot_script : MonoBehaviour {
 	private float Pause = 0.0f;
 	GameObject M_Menu;
-	Menu_Script Menu;
+	Log_Script Menu;
 	string message; 
 	Text textComp;
 
 	// Use this for initialization
 	void Start () {
-		M_Menu = GameObject.FindGameObjectWithTag ("Menu");
-		Menu = M_Menu.GetComponent<Menu_Script> ();
+		M_Menu = GameObject.FindGameObjectWithTag ("Log");
+		Menu = M_Menu.GetComponent<Log_Script> ();
 		textComp = GetComponent<Text> ();
 		message = textComp.text;
 		textComp.text = "";
