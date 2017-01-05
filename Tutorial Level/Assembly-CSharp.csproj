@@ -68,8 +68,6 @@
      <Compile Include="Assets\Scripts\Menu Scripts\Log_Script.cs" />
      <Compile Include="Assets\Scripts\Menu Scripts\Menu_Script.cs" />
      <Compile Include="Assets\Scripts\Menu Scripts\Mouse_Script.cs" />
-     <Compile Include="Assets\Scripts\Unused Scripts (Delete Later)\Col.cs" />
-     <Compile Include="Assets\Scripts\Unused Scripts (Delete Later)\Ele.cs" />
      <Compile Include="Assets\Unity_Store_Stuff\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" />
      <Compile Include="Assets\Unity_Store_Stuff\Standard Assets\Characters\FirstPersonCharacter\Scripts\HeadBob.cs" />
      <Compile Include="Assets\Unity_Store_Stuff\Standard Assets\Characters\FirstPersonCharacter\Scripts\MouseLook.cs" />

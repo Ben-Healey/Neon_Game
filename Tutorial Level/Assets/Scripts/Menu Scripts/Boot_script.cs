@@ -23,7 +23,6 @@ public class Boot_script : MonoBehaviour {
 			textComp.text += letter;
 			yield return new WaitForSeconds (Pause);
 		}
-		Debug.Log ("Finished Typing Fading Out");
 		Menu.Draw ();
 		Destroy (gameObject);
 	}

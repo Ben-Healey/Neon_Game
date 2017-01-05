@@ -14,7 +14,6 @@ public class Draw_Script : MonoBehaviour {
 	}
 
 	public void DrawT(){
-		Debug.Log ("TEXT SHOULD APPEAR");
 		GetComponent<Text> ().enabled = true;
 	}
 }

@@ -44,7 +44,6 @@ public class Log_Script : MonoBehaviour {
 			textComp.text += letter;
 			yield return new WaitForSeconds (Pause);
 		}
-		Debug.Log ("Finished Typing Fading Out");
 		Type.Stop ();
 		Menu_S.Draw ();
 		Destroy (gameObject);
