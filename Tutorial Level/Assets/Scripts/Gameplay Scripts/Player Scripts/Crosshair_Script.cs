@@ -9,6 +9,7 @@ public class Crosshair_Script : MonoBehaviour {
 	public player_stats P_Script;
 	public Shader_Switch S_Script;
 	public Image ColourBar;
+	bool hasColour;
 	GameObject ColourObj;
 	GameObject Test;
 	AudioSource[] audio;
@@ -50,6 +51,7 @@ public class Crosshair_Script : MonoBehaviour {
 					P_Script.Store_Colour (Colour);
 					S_Script.switchoff (Colour);
 					ColourBar.color = Color.green;
+					hasColour = true;
 				}
 			}
 
@@ -64,7 +66,7 @@ public class Crosshair_Script : MonoBehaviour {
 					P_Script.Store_Colour (Colour);
 					S_Script.switchoff (Colour);
 					ColourBar.color = Color.red;
-
+					hasColour = true;
 				}
 			}
 
@@ -79,6 +81,7 @@ public class Crosshair_Script : MonoBehaviour {
 					P_Script.Store_Colour (Colour);
 					S_Script.switchoff (Colour);
 					ColourBar.color = Color.blue;
+					hasColour = true;
 				}
 			}
 
@@ -90,7 +93,7 @@ public class Crosshair_Script : MonoBehaviour {
 			if (Test_Hit.collider.tag == "Enemy") {
 				Colour = P_Script.Get_Colour ();
 				Debug.Log ("Enemy In Sight");
-				if (Input.GetButtonDown ("Fire1") && Colour == "Red Light") {
+			if (Input.GetButtonDown ("Fire1") && Colour == "Red Light") {
 					Debug.Log ("Firing Colour");
 					shot += 1;
 					Test_Hit.transform.gameObject.GetComponentInChildren<Attributes> ().damage ();
@@ -99,6 +102,7 @@ public class Crosshair_Script : MonoBehaviour {
 						shot = 0;
 						Debug.Log ("Colour Clip is now empty");
 						P_Script.Store_Colour (null);
+						hasColour = false;
 					}
 				}
 			}
@@ -107,8 +111,8 @@ public class Crosshair_Script : MonoBehaviour {
 			Debug.Log ("HEALING PLAYER");;
 		}
 		Colour = P_Script.Get_Colour ();
-		if (Input.GetButtonDown ("Fire1") && Colour == "Red Light") {
-			Debug.Log ("Firing Blank");;
+		if (Input.GetButtonDown ("Fire1") && hasColour == true) {
+			Debug.Log ("Firing");;
 			shot += 1;
 			ColourBar.fillAmount = shot/ clip;
 			if (shot == clip) {
@@ -116,6 +120,7 @@ public class Crosshair_Script : MonoBehaviour {
 				Debug.Log ("Colour Clip is now empty");
 				P_Script.Store_Colour (null);
 				ColourBar.color = Color.white;
+				hasColour = false;
 			}
 		}
 		}

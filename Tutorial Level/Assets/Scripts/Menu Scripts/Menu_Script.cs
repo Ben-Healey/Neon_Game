@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Text;
+using System.IO;  
 public class Menu_Script : MonoBehaviour {
 	private float Pause = 0.0f;
 	GameObject Text_SO;
@@ -53,7 +55,8 @@ public class Menu_Script : MonoBehaviour {
 
 	
 		textComp = GetComponent<Text> ();
-		message = textComp.text;
+		message = System.IO.File.ReadAllText("Title.txt");
+		//textComp.text;
 		textComp.text = "";
 		StartCoroutine (TypeText ());
 		Audio.Play ();
