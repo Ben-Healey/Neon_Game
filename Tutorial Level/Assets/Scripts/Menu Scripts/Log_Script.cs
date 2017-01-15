@@ -7,8 +7,10 @@ public class Log_Script : MonoBehaviour {
 	Text textComp;
 	GameObject Menu;
 	GameObject D_Menu;
+	GameObject W_Ele;
 
 	Draw_Script DrawT;
+	Draw_Script DrawW;
 	Menu_Script Menu_S;
 
 	AudioSource Type;
@@ -20,6 +22,8 @@ public class Log_Script : MonoBehaviour {
 		D_Menu = GameObject.FindGameObjectWithTag ("Draw");
 		DrawT = D_Menu.GetComponent<Draw_Script> ();
 
+		W_Ele = GameObject.FindGameObjectWithTag ("Draw2");
+		DrawW = W_Ele.GetComponent<Draw_Script> ();
 		Menu = GameObject.FindGameObjectWithTag ("Menu");
 		Menu_S = Menu.GetComponent<Menu_Script> ();
 	}
@@ -29,14 +33,16 @@ public class Log_Script : MonoBehaviour {
 	
 	}
 
+
 	public void Draw(){
 		GetComponent<Text> ().enabled = true;
 		DrawT.DrawT ();
+		DrawW.DrawT ();
+		//StartCoroutine (Wait ());
 		textComp = GetComponent<Text> ();
 		message = textComp.text;
 		textComp.text = "";
 		StartCoroutine (TypeText ());
-	
 	}
 	IEnumerator TypeText(){
 		Type.Play ();
@@ -47,5 +53,9 @@ public class Log_Script : MonoBehaviour {
 		Type.Stop ();
 		Menu_S.Draw ();
 		Destroy (gameObject);
+	}
+
+	IEnumerator Wait(){
+		yield return new WaitForSeconds (5);
 	}
 }

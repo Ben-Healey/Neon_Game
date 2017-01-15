@@ -10,16 +10,18 @@ public class Crosshair_Script : MonoBehaviour {
 	public Shader_Switch S_Script;
 	public Image ColourBar;
 	bool hasColour;
+	GameObject Player_UI;
 	GameObject ColourObj;
 	GameObject Test;
 	AudioSource[] audio;
 	AudioSource laser;
 	string Colour = null;
-	public int h;
 	public float clip = 6;
 	public float shot = 0;
+
 	// Use this for initialization
 	void Start () {
+		Player_UI = GameObject.Find ("UICanvas");
 		audio = GetComponents<AudioSource> ();
 		laser = audio[1];
 		ColourObj = GameObject.Find ("Colour");
@@ -36,6 +38,7 @@ public class Crosshair_Script : MonoBehaviour {
 		Take_Func ();
 		Fire_Func ();
 		Puzzle ();
+		Inv ();
 	}
 
 	void Take_Func(){
@@ -138,6 +141,14 @@ public class Crosshair_Script : MonoBehaviour {
 			}
 		}
 	
+	}
+
+	void Inv(){
+		if(Input.GetButtonDown("Inventory")){
+			Debug.Log ("Open Inv!");
+			Player_UI.SetActive (false);
+		}
+
 	}
 		
 }

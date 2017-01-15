@@ -50,7 +50,6 @@
      <Compile Include="Assets\Scripts\Gameplay Scripts\Attributes.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scripts\CameraFacingBillboard.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scripts\Door_Test.cs" />
-     <Compile Include="Assets\Scripts\Gameplay Scripts\Fire_Script.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scripts\Floor_Movement.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scripts\Light Scripts\Light_Script.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scripts\Light Scripts\Light_Script_Test.cs" />
@@ -68,6 +67,7 @@
      <Compile Include="Assets\Scripts\Menu Scripts\Log_Script.cs" />
      <Compile Include="Assets\Scripts\Menu Scripts\Menu_Script.cs" />
      <Compile Include="Assets\Scripts\Menu Scripts\Mouse_Script.cs" />
+     <Compile Include="Assets\Scripts\UI Scripts\UI_Text.cs" />
      <Compile Include="Assets\Unity_Store_Stuff\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" />
      <Compile Include="Assets\Unity_Store_Stuff\Standard Assets\Characters\FirstPersonCharacter\Scripts\HeadBob.cs" />
      <Compile Include="Assets\Unity_Store_Stuff\Standard Assets\Characters\FirstPersonCharacter\Scripts\MouseLook.cs" />
