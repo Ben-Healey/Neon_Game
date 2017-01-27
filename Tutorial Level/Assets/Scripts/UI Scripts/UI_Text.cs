@@ -14,8 +14,8 @@ public class UI_Text : MonoBehaviour {
 			yield return new WaitForSeconds (Pause);
 		}
 		yield return new WaitForSeconds (2.0f);
-		Destroy (this.gameObject);
-
+		text.text = null;
+		this.GetComponent<Text> ().enabled = false;
 	}
 
 	// Use this for initialization
@@ -29,6 +29,22 @@ public class UI_Text : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		
+	}
+
+	void onTriggerEnter(Collider other)
+	{
+		Debug.Log ("UI COL");
+		if (other.gameObject.name == "Light Source") {
+			message = System.IO.File.ReadAllText ("Test.txt");
+			text.text = "";
+			StartCoroutine (TypeText ());
+		}
+	}
+
+	void Display_UI(){
+		this.GetComponent<Text> ().enabled = true;
+
 		
 	}
 }

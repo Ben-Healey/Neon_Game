@@ -26,8 +26,6 @@ public class Crosshair_Script : MonoBehaviour {
 		laser = audio[1];
 		ColourObj = GameObject.Find ("Colour");
 		ColourBar = ColourObj.GetComponent<Image> ();
-		//ColourBar = transform.Find ("UICanvas").FindChild ("ColourBG").FindChild ("Colour").GetComponent<Image> ();
-
 	}
 	
 	// Update is called once per frame
@@ -118,6 +116,7 @@ public class Crosshair_Script : MonoBehaviour {
 			Debug.Log ("Firing");;
 			shot += 1;
 			ColourBar.fillAmount = shot/ clip;
+			laser.Play ();
 			if (shot == clip) {
 				shot = 0;
 				Debug.Log ("Colour Clip is now empty");

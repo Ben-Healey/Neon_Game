@@ -92,12 +92,21 @@ public class playerMovement : MonoBehaviour {
 
 		// Apply the move and determine whether we are on the ground
 		grounded = (controller.Move (moveDirection * Time.deltaTime) & CollisionFlags.Below) !=0;
+
+	
+
 	}
 
 	void Update () {
 		// FixedUpdate may not run every frame and might miss a toggle to toggleRun, so it should be checked in Update instead
 		if (toggleRun && grounded && Input.GetButtonDown ("Run"))
 			speed = (speed == walkSpeed ? runSpeed : walkSpeed);
+
+		if(Input.GetButtonDown("Crouch"))
+		{
+			int cr = -1;
+			moveDirection.y -= cr * Time.deltaTime;
+		}
 	}
 
 	void OnControllerColliderHit (ControllerColliderHit hit) {
