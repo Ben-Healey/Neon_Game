@@ -1,9 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Gameplay Scripts\Misc\Floor_Movement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Gameplay Scripts\Player Scripts\Anim_Script.cs">
     <Files>
-      <File FileName="Assets\Scripts\Gameplay Scripts\Misc\Floor_Movement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Gameplay Scripts\Misc\Door_Test.cs" Line="23" Column="33" />
+      <File FileName="Assets\Scripts\Gameplay Scripts\Player Scripts\Anim_Script.cs" Line="6" Column="31" />
+      <File FileName="Assets\Scripts\Gameplay Scripts\Player Scripts\playerMovement.cs" Line="77" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

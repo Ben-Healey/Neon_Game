@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\Gameplay Scripts\Misc\CameraFacingBillboard.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scripts\Misc\Door_Test.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scripts\Misc\Floor_Movement.cs" />
+     <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Anim_Script.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Crosshair_Script.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\canMouseLook.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\playerMovement.cs" />
