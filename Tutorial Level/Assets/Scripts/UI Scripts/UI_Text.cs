@@ -20,8 +20,8 @@ public class UI_Text : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		GetComponent<Text>().enabled = true;
-		text = GetComponent<Text> ();
+		this.GetComponent<Text>().enabled = true;
+		text = GameObject.Find("UICanvas").transform.FindChild("UI_Text").GetComponent<Text> ();
 		message = System.IO.File.ReadAllText("Start.txt");
 		text.text = "";
 		StartCoroutine (TypeText ());
@@ -31,20 +31,24 @@ public class UI_Text : MonoBehaviour {
 	void Update () {
 		
 	}
-
-	void onTriggerEnter(Collider other)
-	{
-		Debug.Log ("UI COL");
-		if (other.gameObject.name == "Light Source") {
+	//Used to determine what ui text needs to be sent to the screen 
+	public void Checker_Function(string x){
+		if (x == "Light_Source") {
+			Display_UI ();
 			message = System.IO.File.ReadAllText ("Test.txt");
 			text.text = "";
 			StartCoroutine (TypeText ());
 		}
-	}
 
+		if (x == "Destoryed") {
+			Display_UI ();
+			message = System.IO.File.ReadAllText ("Puzzle.txt");
+			text.text = "";
+			StartCoroutine (TypeText ());
+		}
+	}
+	//Simple Function to turn text ui element back on 
 	void Display_UI(){
 		this.GetComponent<Text> ().enabled = true;
-
-		
 	}
 }

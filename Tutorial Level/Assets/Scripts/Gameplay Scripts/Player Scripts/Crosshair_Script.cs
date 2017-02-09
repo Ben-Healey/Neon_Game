@@ -42,13 +42,12 @@ public class Crosshair_Script : MonoBehaviour {
 	void Take_Func(){
 		if (Physics.Raycast (Test_Ray, out Test_Hit)) {
 			if (Test_Hit.collider.tag == "Green_Light") {
-				Debug.Log ("Hitting Green Light");
-				Debug.Log (Test_Hit.collider.tag);
+				//Debug.Log ("Hitting Green Light");
+				//Debug.Log (Test_Hit.collider.tag);
 				Debug.DrawLine (Test_Ray.origin, Test_Hit.point);
 				if (Input.GetButtonDown ("Take")) {
-					Debug.Log ("Taking Light");
 					Colour = Test_Hit.collider.tag;
-					Debug.Log ("Storing " + Colour);
+				//	Debug.Log ("Storing " + Colour);
 					P_Script.Store_Colour (Colour);
 					S_Script.switchoff (Colour);
 					ColourBar.color = Color.green;
@@ -61,9 +60,9 @@ public class Crosshair_Script : MonoBehaviour {
 				Debug.Log (Test_Hit.collider.tag);
 				Debug.DrawLine (Test_Ray.origin, Test_Hit.point);
 				if (Input.GetButtonDown ("Take")) {
-					Debug.Log ("Taking Light");
+					//Debug.Log ("Taking Light");
 					Colour = Test_Hit.collider.tag;
-					Debug.Log ("Storing " + Colour);
+					//Debug.Log ("Storing " + Colour);
 					P_Script.Store_Colour (Colour);
 					S_Script.switchoff (Colour);
 					ColourBar.color = Color.red;
@@ -95,7 +94,6 @@ public class Crosshair_Script : MonoBehaviour {
 				Colour = P_Script.Get_Colour ();
 				Debug.Log ("Enemy In Sight");
 			if (Input.GetButtonDown ("Fire1") && Colour == "Red Light") {
-					Debug.Log ("Firing Colour");
 					shot += 1;
 					Test_Hit.transform.gameObject.GetComponentInChildren<Attributes> ().damage ();
 					laser.Play ();
@@ -127,10 +125,10 @@ public class Crosshair_Script : MonoBehaviour {
 		}
 		}
 
+	//Need to rewrite this function to make it clear and work with more puzzles 
 	void Puzzle(){
 		if (Physics.Raycast (Test_Ray, out Test_Hit)) {
 			if (Test_Hit.collider.tag == "Blue_Button" && Colour == "Blue_Light") {
-				Debug.Log ("Hitting Button");
 				Debug.DrawLine (Test_Ray.origin, Test_Hit.point);
 				if(Input.GetButtonDown("Fire1")){
 				Test_Hit.transform.gameObject.GetComponent<Renderer> ().material.color = Color.blue;

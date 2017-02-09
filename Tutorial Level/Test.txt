@@ -1,1 +1,1 @@
-This is a Test
+Use 'E' to store light and left click to attck 

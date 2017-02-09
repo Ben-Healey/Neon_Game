@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class Attributes : MonoBehaviour {
 	// Use this for initialization
+	//public Global_Script Global;
 	public float Health;
 	public float MaxHealth;
 	private Image Heathbar;
@@ -34,6 +35,7 @@ public class Attributes : MonoBehaviour {
 
 		if (Health <= 0) {
 			Destroy (gameObject);
+			Global_Script.Destoryed_Targets += 1;
 		}
 		return 0;
 	}
