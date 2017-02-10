@@ -46,6 +46,32 @@ public class UI_Text : MonoBehaviour {
 			text.text = "";
 			StartCoroutine (TypeText ());
 		}
+		if (x == "Puzzle_Complete") {
+			Display_UI ();
+			message = System.IO.File.ReadAllText ("Next.txt");
+			text.text = "";
+			StartCoroutine (TypeText ());
+		}
+
+		if (x == "Squad_Spawn") {
+			Display_UI ();
+			message = System.IO.File.ReadAllText ("Sqaud.txt");
+			text.text = "";
+			StartCoroutine (TypeText ());
+		}
+
+		if (x == "Sec_Trig") {
+			Display_UI ();
+			message = System.IO.File.ReadAllText ("Sec.txt");
+			text.text = "";
+			StartCoroutine (TypeText ());
+		}
+		if (x == "Alarm") {
+			Display_UI ();
+			message = System.IO.File.ReadAllText ("Alarm.txt");
+			text.text = "";
+			StartCoroutine (TypeText ());
+		}
 	}
 	//Simple Function to turn text ui element back on 
 	void Display_UI(){

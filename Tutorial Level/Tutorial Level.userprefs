@@ -1,6 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UI Scripts\UI_Checker.cs">
+    <Files>
+      <File FileName="Assets\Scripts\UI Scripts\UI_Checker.cs" Line="26" Column="1" />
+      <File FileName="Assets\Scripts\UI Scripts\UI_Text.cs" Line="71" Column="48" />
+      <File FileName="Assets\Scripts\Gameplay Scripts\Player Scripts\Crosshair_Script.cs" Line="21" Column="34" />
+      <File FileName="Assets\Scripts\Global_Scripts\Global_Script.cs" Line="10" Column="2" />
+      <File FileName="Assets\Scripts\Gameplay Scripts\Misc\Alarm_Script.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Gameplay Scripts\Misc\Spotted_Test.cs" Line="9" Column="30" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

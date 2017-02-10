@@ -6,6 +6,7 @@ public class Spotted_Test : MonoBehaviour {
 	private Alarm_Script A_Script;
 	IEnumerator ColourChange(){
 		yield return new WaitForSeconds (5);
+		Global_Script.Alarm = true;
 		SpotL.color = Color.red;
 		A_Script.AlarmSetoff ();
 	}

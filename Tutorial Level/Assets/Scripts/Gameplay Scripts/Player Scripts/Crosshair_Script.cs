@@ -18,7 +18,7 @@ public class Crosshair_Script : MonoBehaviour {
 	string Colour = null;
 	public float clip = 6;
 	public float shot = 0;
-
+	//Need to Clean this file up!!! 
 	// Use this for initialization
 	void Start () {
 		Player_UI = GameObject.Find ("UICanvas");
@@ -133,6 +133,7 @@ public class Crosshair_Script : MonoBehaviour {
 				if(Input.GetButtonDown("Fire1")){
 				Test_Hit.transform.gameObject.GetComponent<Renderer> ().material.color = Color.blue;
 				GameObject k = GameObject.FindWithTag ("Laser");
+				Global_Script.Puzzle_Complete = true;
 				Destroy (k);
 				}
 			}
