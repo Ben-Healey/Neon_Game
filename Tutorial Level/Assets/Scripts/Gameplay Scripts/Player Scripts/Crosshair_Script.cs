@@ -18,7 +18,7 @@ public class Crosshair_Script : MonoBehaviour {
 	string Colour = null;
 	public float clip = 6;
 	public float shot = 0;
-
+	//Need to Clean this file up!!! 
 	// Use this for initialization
 	void Start () {
 		Player_UI = GameObject.Find ("UICanvas");
@@ -26,8 +26,6 @@ public class Crosshair_Script : MonoBehaviour {
 		laser = audio[1];
 		ColourObj = GameObject.Find ("Colour");
 		ColourBar = ColourObj.GetComponent<Image> ();
-		//ColourBar = transform.Find ("UICanvas").FindChild ("ColourBG").FindChild ("Colour").GetComponent<Image> ();
-
 	}
 	
 	// Update is called once per frame
@@ -44,13 +42,12 @@ public class Crosshair_Script : MonoBehaviour {
 	void Take_Func(){
 		if (Physics.Raycast (Test_Ray, out Test_Hit)) {
 			if (Test_Hit.collider.tag == "Green_Light") {
-				Debug.Log ("Hitting Green Light");
-				Debug.Log (Test_Hit.collider.tag);
+				//Debug.Log ("Hitting Green Light");
+				//Debug.Log (Test_Hit.collider.tag);
 				Debug.DrawLine (Test_Ray.origin, Test_Hit.point);
 				if (Input.GetButtonDown ("Take")) {
-					Debug.Log ("Taking Light");
 					Colour = Test_Hit.collider.tag;
-					Debug.Log ("Storing " + Colour);
+				//	Debug.Log ("Storing " + Colour);
 					P_Script.Store_Colour (Colour);
 					S_Script.switchoff (Colour);
 					ColourBar.color = Color.green;
@@ -63,9 +60,9 @@ public class Crosshair_Script : MonoBehaviour {
 				Debug.Log (Test_Hit.collider.tag);
 				Debug.DrawLine (Test_Ray.origin, Test_Hit.point);
 				if (Input.GetButtonDown ("Take")) {
-					Debug.Log ("Taking Light");
+					//Debug.Log ("Taking Light");
 					Colour = Test_Hit.collider.tag;
-					Debug.Log ("Storing " + Colour);
+					//Debug.Log ("Storing " + Colour);
 					P_Script.Store_Colour (Colour);
 					S_Script.switchoff (Colour);
 					ColourBar.color = Color.red;
@@ -97,7 +94,6 @@ public class Crosshair_Script : MonoBehaviour {
 				Colour = P_Script.Get_Colour ();
 				Debug.Log ("Enemy In Sight");
 			if (Input.GetButtonDown ("Fire1") && Colour == "Red Light") {
-					Debug.Log ("Firing Colour");
 					shot += 1;
 					Test_Hit.transform.gameObject.GetComponentInChildren<Attributes> ().damage ();
 					laser.Play ();
@@ -118,6 +114,7 @@ public class Crosshair_Script : MonoBehaviour {
 			Debug.Log ("Firing");;
 			shot += 1;
 			ColourBar.fillAmount = shot/ clip;
+			laser.Play ();
 			if (shot == clip) {
 				shot = 0;
 				Debug.Log ("Colour Clip is now empty");
@@ -128,14 +125,15 @@ public class Crosshair_Script : MonoBehaviour {
 		}
 		}
 
+	//Need to rewrite this function to make it clear and work with more puzzles 
 	void Puzzle(){
 		if (Physics.Raycast (Test_Ray, out Test_Hit)) {
 			if (Test_Hit.collider.tag == "Blue_Button" && Colour == "Blue_Light") {
-				Debug.Log ("Hitting Button");
 				Debug.DrawLine (Test_Ray.origin, Test_Hit.point);
 				if(Input.GetButtonDown("Fire1")){
 				Test_Hit.transform.gameObject.GetComponent<Renderer> ().material.color = Color.blue;
 				GameObject k = GameObject.FindWithTag ("Laser");
+				Global_Script.Puzzle_Complete = true;
 				Destroy (k);
 				}
 			}

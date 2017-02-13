@@ -14,14 +14,14 @@ public class UI_Text : MonoBehaviour {
 			yield return new WaitForSeconds (Pause);
 		}
 		yield return new WaitForSeconds (2.0f);
-		Destroy (this.gameObject);
-
+		text.text = null;
+		this.GetComponent<Text> ().enabled = false;
 	}
 
 	// Use this for initialization
 	void Start () {
-		GetComponent<Text>().enabled = true;
-		text = GetComponent<Text> ();
+		this.GetComponent<Text>().enabled = true;
+		text = GameObject.Find("UICanvas").transform.FindChild("UI_Text").GetComponent<Text> ();
 		message = System.IO.File.ReadAllText("Start.txt");
 		text.text = "";
 		StartCoroutine (TypeText ());
@@ -30,5 +30,51 @@ public class UI_Text : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+	}
+	//Used to determine what ui text needs to be sent to the screen 
+	public void Checker_Function(string x){
+		if (x == "Light_Source") {
+			Display_UI ();
+			message = System.IO.File.ReadAllText ("Test.txt");
+			text.text = "";
+			StartCoroutine (TypeText ());
+		}
+
+		if (x == "Destoryed") {
+			Display_UI ();
+			message = System.IO.File.ReadAllText ("Puzzle.txt");
+			text.text = "";
+			StartCoroutine (TypeText ());
+		}
+		if (x == "Puzzle_Complete") {
+			Display_UI ();
+			message = System.IO.File.ReadAllText ("Next.txt");
+			text.text = "";
+			StartCoroutine (TypeText ());
+		}
+
+		if (x == "Squad_Spawn") {
+			Display_UI ();
+			message = System.IO.File.ReadAllText ("Sqaud.txt");
+			text.text = "";
+			StartCoroutine (TypeText ());
+		}
+
+		if (x == "Sec_Trig") {
+			Display_UI ();
+			message = System.IO.File.ReadAllText ("Sec.txt");
+			text.text = "";
+			StartCoroutine (TypeText ());
+		}
+		if (x == "Alarm") {
+			Display_UI ();
+			message = System.IO.File.ReadAllText ("Alarm.txt");
+			text.text = "";
+			StartCoroutine (TypeText ());
+		}
+	}
+	//Simple Function to turn text ui element back on 
+	void Display_UI(){
+		this.GetComponent<Text> ().enabled = true;
 	}
 }

@@ -3,6 +3,7 @@ using System.Collections;
 
 public class player_stats : MonoBehaviour {
 	public string Colour;
+	public float Health; 
 	// Use this for initialization
 	void Start () {
 		 Colour = null;

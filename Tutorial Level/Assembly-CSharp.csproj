@@ -46,20 +46,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Gameplay Scripts\Alarm_Script.cs" />
-     <Compile Include="Assets\Scripts\Gameplay Scripts\Attributes.cs" />
-     <Compile Include="Assets\Scripts\Gameplay Scripts\CameraFacingBillboard.cs" />
-     <Compile Include="Assets\Scripts\Gameplay Scripts\Door_Test.cs" />
-     <Compile Include="Assets\Scripts\Gameplay Scripts\Floor_Movement.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scripts\Light Scripts\Light_Script.cs" />
-     <Compile Include="Assets\Scripts\Gameplay Scripts\Light Scripts\Light_Script_Test.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scripts\Light Scripts\Shader_Switch.cs" />
+     <Compile Include="Assets\Scripts\Gameplay Scripts\Misc\Alarm_Script.cs" />
+     <Compile Include="Assets\Scripts\Gameplay Scripts\Misc\CameraFacingBillboard.cs" />
+     <Compile Include="Assets\Scripts\Gameplay Scripts\Misc\Door_Test.cs" />
+     <Compile Include="Assets\Scripts\Gameplay Scripts\Misc\Floor_Movement.cs" />
+     <Compile Include="Assets\Scripts\Gameplay Scripts\Misc\Spotted_Test.cs" />
+     <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Anim_Script.cs" />
+     <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Attributes.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Crosshair_Script.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\canMouseLook.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\playerMovement.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\player_stats.cs" />
-     <Compile Include="Assets\Scripts\Gameplay Scripts\Spotted_Test.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scripts\Triggers\Floor_Trig.cs" />
+     <Compile Include="Assets\Scripts\Global_Scripts\Global_Script.cs" />
      <Compile Include="Assets\Scripts\Menu Scripts\Boot_script.cs" />
      <Compile Include="Assets\Scripts\Menu Scripts\CRT.cs" />
      <Compile Include="Assets\Scripts\Menu Scripts\Draw_Script.cs" />
@@ -67,6 +68,7 @@
      <Compile Include="Assets\Scripts\Menu Scripts\Log_Script.cs" />
      <Compile Include="Assets\Scripts\Menu Scripts\Menu_Script.cs" />
      <Compile Include="Assets\Scripts\Menu Scripts\Mouse_Script.cs" />
+     <Compile Include="Assets\Scripts\UI Scripts\UI_Checker.cs" />
      <Compile Include="Assets\Scripts\UI Scripts\UI_Text.cs" />
      <Compile Include="Assets\Unity_Store_Stuff\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" />
      <Compile Include="Assets\Unity_Store_Stuff\Standard Assets\Characters\FirstPersonCharacter\Scripts\HeadBob.cs" />
