@@ -29,6 +29,7 @@ public class Crosshair_Script : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
+	// 
 	void Update () {
 		Test_Ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 		Vector3 forward = transform.TransformDirection(Vector3.forward) * 10;
@@ -92,13 +93,15 @@ public class Crosshair_Script : MonoBehaviour {
 	void Fire_Func(){
 			if (Test_Hit.collider.tag == "Enemy") {
 				Colour = P_Script.Get_Colour ();
-				Debug.Log ("Enemy In Sight");
-			if (Input.GetButtonDown ("Fire1") && Colour == "Red Light") {
-					shot += 1;
+				if (Input.GetButtonDown ("Fire1") && Colour == "Red Light") {
+				shot = shot+1;
+				ColourBar.fillAmount -= 0.1666f;
+				Debug.Log (shot);
 					Test_Hit.transform.gameObject.GetComponentInChildren<Attributes> ().damage ();
 					laser.Play ();
 					if (shot == clip) {
 						shot = 0;
+						ColourBar.fillAmount = 1;
 						Debug.Log ("Colour Clip is now empty");
 						P_Script.Store_Colour (null);
 						hasColour = false;
@@ -110,13 +113,14 @@ public class Crosshair_Script : MonoBehaviour {
 			Debug.Log ("HEALING PLAYER");;
 		}
 		Colour = P_Script.Get_Colour ();
-		if (Input.GetButtonDown ("Fire1") && hasColour == true) {
-			Debug.Log ("Firing");;
+		if (Input.GetButtonDown ("Fire1") && hasColour == true && Test_Hit.collider.tag != "Enemy") {
 			shot += 1;
-			ColourBar.fillAmount = shot/ clip;
+			ColourBar.fillAmount -= 0.1666f;
+			Debug.Log (ColourBar.fillAmount);
 			laser.Play ();
 			if (shot == clip) {
 				shot = 0;
+				ColourBar.fillAmount = 1;
 				Debug.Log ("Colour Clip is now empty");
 				P_Script.Store_Colour (null);
 				ColourBar.color = Color.white;
@@ -131,16 +135,21 @@ public class Crosshair_Script : MonoBehaviour {
 			if (Test_Hit.collider.tag == "Blue_Button" && Colour == "Blue_Light") {
 				Debug.DrawLine (Test_Ray.origin, Test_Hit.point);
 				if(Input.GetButtonDown("Fire1")){
-				Test_Hit.transform.gameObject.GetComponent<Renderer> ().material.color = Color.blue;
-				GameObject k = GameObject.FindWithTag ("Laser");
-				Global_Script.Puzzle_Complete = true;
-				Destroy (k);
+					P_Script.Store_Colour (null);
+					shot = 0;
+					hasColour = false;
+					ColourBar.color = Color.white;
+					Test_Hit.transform.gameObject.GetComponent<Renderer> ().material.color = Color.blue;
+					GameObject k = GameObject.FindWithTag ("Laser");
+					Global_Script.Puzzle_Complete = true;
+					Destroy (k);
 				}
 			}
 		}
 	
 	}
-
+	//Not Currently Used By The Systems in the Game
+	//Will add later if time
 	void Inv(){
 		if(Input.GetButtonDown("Inventory")){
 			Debug.Log ("Open Inv!");
