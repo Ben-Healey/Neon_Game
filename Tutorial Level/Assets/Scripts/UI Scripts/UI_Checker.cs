@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class UI_Checker : MonoBehaviour {
 	public UI_Text Checker;
-	bool blocker = false;
-	bool blocker2 = false;
+	//bool blocker = false;
+	//bool blocker2 = false;
 	//string CheckerString;
 	// Use this for initialization
 	void Start () {

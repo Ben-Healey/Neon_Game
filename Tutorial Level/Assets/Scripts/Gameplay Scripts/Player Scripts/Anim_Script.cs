@@ -6,7 +6,7 @@ public class Anim_Script : MonoBehaviour {
 	public playerMovement player;
 	// Use this for initialization
 	void Start () {
-		Animator Anim;
+//		Animator Anim;
 	}
 	
 	// Update is called once per frame
