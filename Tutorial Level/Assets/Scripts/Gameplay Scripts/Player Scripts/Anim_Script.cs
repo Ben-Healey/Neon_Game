@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Anim_Script : MonoBehaviour {
-	public playerMovement player;
+	public AnimationClip idle;
+	string idleN;
 	// Use this for initialization
 	void Start () {
 //		Animator Anim;
@@ -12,5 +13,13 @@ public class Anim_Script : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	public void Idle()
+	{
+		idleN = idle.name;
+
+		GetComponent<Animation> ().Play (idleN);
+
 	}
 }

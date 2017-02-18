@@ -6,18 +6,19 @@ public class Fire_Script : MonoBehaviour {
 	Ray ray;
 	RaycastHit ray_hit;
 	public player_stats player_script;
+	public Anim_Script Anim;
 	Image ColourBar;
 	new AudioSource[] audio;
 	AudioSource laser;
 	string Colour = null;
 	float clipSize = 6;
 	public float shot = 0;
-
-
+	//public AnimationClip idle;
 	// Use this for initialization
 	void Start () {
 		GameObject ColourObj = GameObject.Find ("Colour");
 		ColourBar = ColourObj.GetComponent<Image> ();
+	
 		audio = GetComponents<AudioSource> ();
 		laser = audio [1];
 	}
@@ -27,10 +28,11 @@ public class Fire_Script : MonoBehaviour {
 		ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 		Vector3 forward = transform.TransformDirection(Vector3.forward) * 10;
 		Debug.DrawRay (transform.position, forward, Color.green);
-
+		//Anim.Idle ();
 		if (Physics.Raycast (ray, out ray_hit)) {
 			if (ray_hit.collider.tag == "Enemy") {
 				Fire_Enemy ();
+				Debug.Log ("Hitting Enemy");
 			}
 
 			Colour = player_script.Get_Colour ();

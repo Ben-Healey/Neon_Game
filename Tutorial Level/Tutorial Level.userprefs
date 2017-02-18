@@ -1,13 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Gameplay Scripts\Player Scripts\Puzzle_Script.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Scripts\_Weapons\Gun.cs">
     <Files>
       <File FileName="Assets\Scripts\Gameplay Scripts\Player Scripts\player_stats.cs" Line="32" Column="43" />
-      <File FileName="Assets\Scripts\Gameplay Scripts\Player Scripts\Attributes.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Gameplay Scripts\Player Scripts\canMouseLook.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Gameplay Scripts\Player Scripts\Take_Script.cs" Line="48" Column="115" />
-      <File FileName="Assets\Scripts\Gameplay Scripts\Player Scripts\Fire_Script.cs" Line="10" Column="6" />
-      <File FileName="Assets\Scripts\Gameplay Scripts\Player Scripts\Puzzle_Script.cs" Line="13" Column="4" />
+      <File FileName="Assets\Scripts\Gameplay Scripts\Player Scripts\canMouseLook.cs" Line="36" Column="46" />
+      <File FileName="Assets\Scripts\Global_Scripts\Global_Script.cs" Line="11" Column="2" />
+      <File FileName="Assets\Scripts\Menu Scripts\Mouse_Script.cs" Line="51" Column="1" />
+      <File FileName="Assets\Scripts\Gameplay Scripts\Player Scripts\Fire_Script.cs" Line="31" Column="5" />
+      <File FileName="Assets\Scripts\Gameplay Scripts\Player Scripts\Anim_Script.cs" Line="26" Column="1" />
+      <File FileName="Assets\Scripts\Menu Scripts\Pause_Script.cs" Line="21" Column="1" />
+      <File FileName="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Scripts\_Weapons\Gun.cs" Line="95" Column="3" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

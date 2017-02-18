@@ -7,6 +7,7 @@ public class Global_Script : MonoBehaviour {
 	public static int Destoryed_Targets = 0;
 	public static bool Puzzle_Complete =  false;
 	public static bool Alarm = false;
+	public static bool Paused = false;
 
 	// Use this for initialization
 	void Start () {
