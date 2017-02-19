@@ -12,7 +12,7 @@ public class Pause_Script : MonoBehaviour {
 	void Start () {
 		Pause_Menu = GameObject.Find ("Pause");
 		Player_UI = GameObject.Find ("UICanvas");
-		Pause_Menu.GetComponent<Canvas> ().enabled = false;
+		Pause_Menu.GetComponent<Canvas> ().enabled = false; // Error is thrown if object is left inactive need to rememeber to active it :L
 	}
 	
 	// Update is called once per frame
