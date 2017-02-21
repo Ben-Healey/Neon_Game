@@ -1,15 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class UI_Checker : MonoBehaviour {
 	public UI_Text Checker;
-	bool blocker = false;
-	bool blocker2 = false;
-	//string CheckerString;
+	string sceneName;
+	Scene currentScene;
 	// Use this for initialization
 	void Start () {
-		
+		currentScene = SceneManager.GetActiveScene ();
+		sceneName = currentScene.name;
 	}
 	
 	// Update is called once per frame
@@ -25,7 +25,10 @@ public class UI_Checker : MonoBehaviour {
 		}
 		if (Global_Script.Alarm == true) {
 			Global_Script.Alarm = false;
+			//Checker so the Alarm text only plays on the tutorial level
+			if(sceneName == "Tutorial") {
 			Checker.Checker_Function ("Alarm");
+			}
 		}
 
 	}
@@ -43,6 +46,10 @@ public class UI_Checker : MonoBehaviour {
 
 		if (other.gameObject.name == "Sec_Trig") {
 			Checker.Checker_Function (other.gameObject.name);
+		}
+		if (other.gameObject.name == "Combat_Trigger") {
+			//Only loads next level as combat is not yet in, will instead load a text file once combat is in
+			SceneManager.LoadScene("Set_Up");
 		}
 	}
 		

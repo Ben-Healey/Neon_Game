@@ -42,58 +42,60 @@ public class playerMovement : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
-		float inputX = Input.GetAxis ("Horizontal");
-		float inputY = Input.GetAxis ("Vertical");
-		float inputModifyFactor = (inputX != 0.0f && inputY != 0.0f && limitDiagonalSpeed) ? .7071f : 1.0f;
 
-		if (grounded) {
+		if (Global_Script.Paused == false) {
+			float inputX = Input.GetAxis ("Horizontal");
+			float inputY = Input.GetAxis ("Vertical");
+			float inputModifyFactor = (inputX != 0.0f && inputY != 0.0f && limitDiagonalSpeed) ? .7071f : 1.0f;
 
-			if (falling) {
-				falling = false;
-				if (myTransform.position.y < fallStartHeight - fallDamageLimit)
-					FallDamageAlert (fallStartHeight - myTransform.position.y);
+			if (grounded) {
+
+				if (falling) {
+					falling = false;
+					if (myTransform.position.y < fallStartHeight - fallDamageLimit)
+						FallDamageAlert (fallStartHeight - myTransform.position.y);
+				}
+
+				if (!toggleRun) {
+					speed = Input.GetButton ("Run") ? runSpeed : walkSpeed;
+				}
+
+				moveDirection = new Vector3 (inputX * inputModifyFactor, -antiBumpFactor, inputY * inputModifyFactor);
+				moveDirection = myTransform.TransformDirection (moveDirection) * speed;
+
+
+				// Jumping controls are defined by whether the button is not pressed and that the time delay has been reached
+				if (!Input.GetButton ("Jump"))
+					jumpTimer++;
+				else if (jumpTimer >= antiBunnyhopFactor) {
+					moveDirection.y = jumpSpeed;
+					jumpTimer = 0;
+				}
+			} else {
+				if (!falling) { // Check every frame whether we are falling, as it gets reset when we are grounded
+					falling = true;
+					fallStartHeight = myTransform.position.y;
+				}
 			}
+			// Apply gravity movement
+			moveDirection.y -= gravity * Time.deltaTime;
 
-			if (!toggleRun) {
-				speed = Input.GetButton ("Run") ? runSpeed : walkSpeed;
-			}
-
-			moveDirection = new Vector3 (inputX * inputModifyFactor, -antiBumpFactor, inputY * inputModifyFactor);
-			moveDirection = myTransform.TransformDirection (moveDirection) * speed;
-
-
-			// Jumping controls are defined by whether the button is not pressed and that the time delay has been reached
-			if (!Input.GetButton ("Jump"))
-				jumpTimer++;
-			else if (jumpTimer >= antiBunnyhopFactor) {
-				moveDirection.y = jumpSpeed;
-				jumpTimer = 0;
-			}
-		} else {
-			if (!falling) { // Check every frame whether we are falling, as it gets reset when we are grounded
-				falling = true;
-				fallStartHeight = myTransform.position.y;
-			}
+			// Apply the move and determine whether we are on the ground
+			grounded = (controller.Move (moveDirection * Time.deltaTime) & CollisionFlags.Below) != 0;
 		}
-		// Apply gravity movement
-		moveDirection.y -= gravity * Time.deltaTime;
-
-		// Apply the move and determine whether we are on the ground
-		grounded = (controller.Move (moveDirection * Time.deltaTime) & CollisionFlags.Below) !=0;
-
-	
-
 	}
 
 	void Update () {
-		// FixedUpdate may not run every frame and might miss a toggle to toggleRun, so it should be checked in Update instead
-		if (toggleRun && grounded && Input.GetButtonDown ("Run"))
-			speed = (speed == walkSpeed ? runSpeed : walkSpeed);
 
-		if(Input.GetButtonDown("Crouch"))
-		{
-			int cr = -1;
-			moveDirection.y -= cr * Time.deltaTime;
+		if (Global_Script.Paused == false) {
+			// FixedUpdate may not run every frame and might miss a toggle to toggleRun, so it should be checked in Update instead
+			if (toggleRun && grounded && Input.GetButtonDown ("Run"))
+				speed = (speed == walkSpeed ? runSpeed : walkSpeed);
+
+			if (Input.GetButtonDown ("Crouch")) {
+				int cr = -1;
+				moveDirection.y -= cr * Time.deltaTime;
+			}
 		}
 	}
 

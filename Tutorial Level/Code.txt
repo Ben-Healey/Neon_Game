@@ -1,0 +1,50 @@
+ping -n 2 127.0.0.1>nul
+echo Enter password to activate the program...
+set/p "pass=>"
+if NOT %pass%== pause goto :incorrect_pass
+if %pass%== fakehack goto :correct_pass</p><p>:correct_pass</p><p>cls
+echo Password hidden...
+ping -n 2 127.0.0.1>nul
+ping -n 2 127.0.0.1>nul
+echo PASSWORD CORRECT
+ping -n 2 127.0.0.1>nul
+ping -n 2 127.0.0.1>nul
+color 97
+cls
+title svr_hack_var_aggressive.exe
+echo Initializing svr_hack_var_aggressive.exe
+ping -n 2 127.0.0.1>nul
+ping -n 2 127.0.0.1>nul
+ping -n 2 127.0.0.1>nul
+tree C:/Windows/System32
+echo Initializing Complete! Are you ready to continue enable Proxy Servers?
+@echo off
+:choice
+set /P c=Are you sure you want to continue[Y/N]?
+if /I "%c%" EQU "Y" goto :somewhere
+if /I "%c%" EQU "N" goto :somewhere_else
+goto :choice</p><p>:somewhere</p><p>cls
+echo Proxy Servers enabling...
+ping -n 2 127.0.0.1>nul
+echo Proxy Servers 27%% enabled...
+ping -n 2 127.0.0.1>nul
+echo Proxy Servers 56%% enabled...
+ping -n 2 127.0.0.1>nul
+echo Proxy Servers 89%% enabled...
+ping -n 2 127.0.0.1>nul
+echo Proxy Servers have been enabled. Are you ready to enable software rooting?
+@echo off
+:choice
+set /P c=Are you sure you want to continue[Y/N]?
+if /I "%c%" EQU "Y" goto :somewhere2
+if /I "%c%" EQU "N" goto :somewhere_else2
+goto :choice</p><p>:somewhere_else</p><p>echo svr_hack_var_aggressive.exe had been closed, exiting out of cmd...
+ping -n 2 127.0.0.1>nul
+ping -n 2 127.0.0.1>nul
+exit</p><p>:somewhere2</p><p>echo Collecting files to root... (Warning, this process may take several minutes!)
+ping -n 2 127.0.0.1>nul
+ping -n 2 127.0.0.1>nul
+ping -n 2 127.0.0.1>nul
+@echo off
+tree C:\
+@echo off

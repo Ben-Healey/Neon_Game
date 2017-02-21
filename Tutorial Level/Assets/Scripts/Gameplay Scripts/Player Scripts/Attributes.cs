@@ -11,7 +11,7 @@ public class Attributes : MonoBehaviour {
 	void Start () {
 		Health = 100;
 		MaxHealth = 100;
-		Heathbar = transform.FindChild ("EnemyCanvas").FindChild ("HealthBG").FindChild ("Health").GetComponent<Image> ();
+		Heathbar = this.transform.FindChild ("EnemyCanvas").FindChild ("HealthBG").FindChild ("Health").GetComponent<Image> ();
 	}
 
 	// Update is called once per frame
