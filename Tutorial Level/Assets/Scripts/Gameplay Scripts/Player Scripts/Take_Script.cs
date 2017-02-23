@@ -22,7 +22,7 @@ public class Take_Script : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-		Vector3 forward = transform.TransformDirection(Vector3.forward) * 10;
+		Vector3 forward = transform.TransformDirection(Vector3.forward) * 20;
 		Debug.DrawRay (transform.position, forward, Color.green);
 
 		if(Physics.Raycast (ray, out ray_hit)){

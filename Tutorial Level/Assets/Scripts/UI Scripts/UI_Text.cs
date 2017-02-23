@@ -4,10 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Text;
 using System.IO;  
+using UnityEngine.SceneManagement;
 public class UI_Text : MonoBehaviour {
 	string message;
 	Text text;
 	private float Pause = 0.2f;
+	string sceneName;
+	Scene currentScene;
+
 	IEnumerator TypeText(){
 		foreach (char letter in message.ToCharArray()) {
 			text.text += letter;
@@ -20,11 +24,16 @@ public class UI_Text : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		currentScene = SceneManager.GetActiveScene ();
+		sceneName = currentScene.name;
+
 		this.GetComponent<Text>().enabled = true;
 		text = GameObject.Find("UICanvas").transform.FindChild("UI_Text").GetComponent<Text> ();
-		message = System.IO.File.ReadAllText("Start.txt");
-		text.text = "";
-		StartCoroutine (TypeText ());
+		if (sceneName == "Tutorial") {
+			message = System.IO.File.ReadAllText ("Start.txt");
+			text.text = "";
+			StartCoroutine (TypeText ());
+		}
 	}
 	
 	// Update is called once per frame
