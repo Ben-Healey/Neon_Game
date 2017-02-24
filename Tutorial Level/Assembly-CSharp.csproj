@@ -72,6 +72,7 @@
      <Compile Include="Assets\Scripts\Menu Scripts\Menu_Script.cs" />
      <Compile Include="Assets\Scripts\Menu Scripts\Mouse_Script.cs" />
      <Compile Include="Assets\Scripts\Menu Scripts\Pause_Script.cs" />
+     <Compile Include="Assets\Scripts\Sound.cs" />
      <Compile Include="Assets\Scripts\UI Scripts\UI_Checker.cs" />
      <Compile Include="Assets\Scripts\UI Scripts\UI_Text.cs" />
      <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Scripts\ArenaControl.cs" />
