@@ -24,6 +24,7 @@ TagManager:
   - Draw
   - Draw2
   - Cover
+  - Squad
   layers:
   - Default
   - TransparentFX

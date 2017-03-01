@@ -23,19 +23,23 @@ public class coverEnabler : MonoBehaviour {
 	}
 
     public bool CheckValid () {
+        isValid = false; // Must be reset to false every call otherwise will remain true after one swap
+
         checkPlayer();
         checkSquad();
 
-        if(playerValid && squadValid) {
-            Debug.Log("playerValid && squadValid passed");
+        if (playerValid && squadValid) {
             isValid = true;
+            Debug.Log("isValid = " + isValid);
         }
 
-        Debug.Log("isValid = " + isValid);
         return isValid;
     }
 
     bool checkPlayer () {
+
+        playerValid = false; // Must be reset to false every call otherwise will remain true after one swap
+
         // Move raycast towards player direction
         checkRay.direction = player.transform.position - gameObject.transform.position;
 
@@ -44,37 +48,27 @@ public class coverEnabler : MonoBehaviour {
         if (!hit.collider.CompareTag("Player")) // If you don't hit the player,
             playerValid = true;                 // it's a valid cover.
 
-        Debug.Log("playerValid = " + playerValid);
         return playerValid;
     }
 
     bool checkSquad () {
-        //for(int i = 0; i < squad.Length; i++) {
-        //    if(squad[i] == null)
-        //        squad[i].
-        //}
 
-        bool looping = true;
+        squadValid = false; // Must be reset to false every call otherwise will remain true after one swap
+
         bool squadInvalid = false;
 
         for (int i = 0; i < squad.Length; i++) {
-            while (looping) {
-                // Move raycast towards squad member [i]
-                checkRay.direction = squad[i].transform.position - gameObject.transform.position;
+            // Move raycast towards squad member [i]
+            checkRay.direction = squad[i].transform.position - gameObject.transform.position;
 
-                Physics.Raycast(checkRay, out hit, 50f);
-                if (hit.collider.CompareTag("Squad")) {
-                    looping = false;
-                    Debug.Log("looping should be false = " + looping);
-                    squadInvalid = true;
-                }
-            }
+            Physics.Raycast(checkRay, out hit, 50f);
+            if (hit.collider.CompareTag("Squad"))
+                squadInvalid = true;
         }
 
         if (!squadInvalid)
             squadValid = true;
-
-        Debug.Log("squadValid = " + squadValid);
+        
         return squadValid;
     }
 }

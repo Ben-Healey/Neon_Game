@@ -36,7 +36,7 @@ public class Crosshair_Script : MonoBehaviour {
 		Vector3 forward = transform.TransformDirection(Vector3.forward) * 10;
 		Debug.DrawRay (transform.position, forward, Color.green);
 		Take_Func ();
-		Fire_Func ();
+		//Fire_Func ();
 		Puzzle ();
 		Inv ();
 	}
@@ -92,41 +92,41 @@ public class Crosshair_Script : MonoBehaviour {
 	}
 }
 
-	void Fire_Func(){
-			if (Test_Hit.collider.tag == "Enemy") {
-				Colour = P_Script.Get_Colour ();
-				Debug.Log ("Enemy In Sight");
-			if (Input.GetButtonDown ("Fire1") && Colour == "Red Light") {
-					Debug.Log ("Firing Colour");
-					shot += 1;
-					Test_Hit.transform.gameObject.GetComponentInChildren<Attributes> ().damage ();
-					laser.Play ();
-					if (shot == clip) {
-						shot = 0;
-						Debug.Log ("Colour Clip is now empty");
-						P_Script.Store_Colour (null);
-						hasColour = false;
-					}
-				}
-			}
-		Colour = P_Script.Get_Colour ();
-		if (Input.GetButtonDown ("Fire1") && Colour == "Green_Light") {
-			Debug.Log ("HEALING PLAYER");;
-		}
-		Colour = P_Script.Get_Colour ();
-		if (Input.GetButtonDown ("Fire1") && hasColour == true) {
-			Debug.Log ("Firing");;
-			shot += 1;
-			ColourBar.fillAmount = shot/ clip;
-			if (shot == clip) {
-				shot = 0;
-				Debug.Log ("Colour Clip is now empty");
-				P_Script.Store_Colour (null);
-				ColourBar.color = Color.white;
-				hasColour = false;
-			}
-		}
-		}
+	//void Fire_Func(){
+	//		if (Test_Hit.collider.tag == "Enemy") {
+	//			Colour = P_Script.Get_Colour ();
+	//			Debug.Log ("Enemy In Sight");
+	//		if (Input.GetButtonDown ("Fire1") && Colour == "Red Light") {
+	//				Debug.Log ("Firing Colour");
+	//				shot += 1;
+	//				Test_Hit.transform.gameObject.GetComponentInChildren<Attributes> ().damage ();
+	//				laser.Play ();
+	//				if (shot == clip) {
+	//					shot = 0;
+	//					Debug.Log ("Colour Clip is now empty");
+	//					P_Script.Store_Colour (null);
+	//					hasColour = false;
+	//				}
+	//			}
+	//		}
+	//	Colour = P_Script.Get_Colour ();
+	//	if (Input.GetButtonDown ("Fire1") && Colour == "Green_Light") {
+	//		Debug.Log ("HEALING PLAYER");;
+	//	}
+	//	Colour = P_Script.Get_Colour ();
+	//	if (Input.GetButtonDown ("Fire1") && hasColour == true) {
+	//		Debug.Log ("Firing");;
+	//		shot += 1;
+	//		ColourBar.fillAmount = shot/ clip;
+	//		if (shot == clip) {
+	//			shot = 0;
+	//			Debug.Log ("Colour Clip is now empty");
+	//			P_Script.Store_Colour (null);
+	//			ColourBar.color = Color.white;
+	//			hasColour = false;
+	//		}
+	//	}
+	//	}
 
 	void Puzzle(){
 		if (Physics.Raycast (Test_Ray, out Test_Hit)) {
