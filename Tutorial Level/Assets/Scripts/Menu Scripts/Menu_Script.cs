@@ -8,7 +8,7 @@ public class Menu_Script : MonoBehaviour {
 	GameObject Text_SO;
 	GameObject Text_OO;
 	GameObject Text_QO;
-
+	TextAsset Title;
 	string message; 
 	Text textComp;
 	Text Text_S;
@@ -55,7 +55,7 @@ public class Menu_Script : MonoBehaviour {
 
 	
 		textComp = GetComponent<Text> ();
-		message = System.IO.File.ReadAllText("Title.txt");
+		message = System.IO.File.ReadAllText("Assets/Text Files/Title.txt");
 		//textComp.text;
 		textComp.text = "";
 		StartCoroutine (TypeText ());

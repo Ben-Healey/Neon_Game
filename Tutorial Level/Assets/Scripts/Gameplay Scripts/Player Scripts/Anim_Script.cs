@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Anim_Script : MonoBehaviour {
-	public AnimationClip idle;
+	public static AnimationClip idle;
 	string idleN;
 	// Use this for initialization
 	void Start () {
@@ -20,6 +20,7 @@ public class Anim_Script : MonoBehaviour {
 		idleN = idle.name;
 
 		GetComponent<Animation> ().Play (idleN);
+		GetComponent<Animation> ().transform.Translate (0, 0, 0);
 
 	}
 }

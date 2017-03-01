@@ -30,7 +30,7 @@ public class UI_Text : MonoBehaviour {
 		this.GetComponent<Text>().enabled = true;
 		text = GameObject.Find("UICanvas").transform.FindChild("UI_Text").GetComponent<Text> ();
 		if (sceneName == "Tutorial") {
-			message = System.IO.File.ReadAllText ("Start.txt");
+			message = System.IO.File.ReadAllText ("Assets/Text Files/Start.txt");
 			text.text = "";
 			StartCoroutine (TypeText ());
 		}
@@ -44,40 +44,40 @@ public class UI_Text : MonoBehaviour {
 	public void Checker_Function(string x){
 		if (x == "Light_Source") {
 			Display_UI ();
-			message = System.IO.File.ReadAllText ("Test.txt");
+			message = System.IO.File.ReadAllText ("Assets/Text Files/Test.txt");
 			text.text = "";
 			StartCoroutine (TypeText ());
 		}
 
 		if (x == "Destoryed") {
 			Display_UI ();
-			message = System.IO.File.ReadAllText ("Puzzle.txt");
+			message = System.IO.File.ReadAllText ("Assets/Text Files/Puzzle.txt");
 			text.text = "";
 			StartCoroutine (TypeText ());
 		}
 		if (x == "Puzzle_Complete") {
 			Display_UI ();
-			message = System.IO.File.ReadAllText ("Next.txt");
+			message = System.IO.File.ReadAllText ("Assets/Text Files/Next.txt");
 			text.text = "";
 			StartCoroutine (TypeText ());
 		}
 
 		if (x == "Squad_Spawn") {
 			Display_UI ();
-			message = System.IO.File.ReadAllText ("Sqaud.txt");
+			message = System.IO.File.ReadAllText ("Assets/Text Files/Sqaud.txt");
 			text.text = "";
 			StartCoroutine (TypeText ());
 		}
 
 		if (x == "Sec_Trig") {
 			Display_UI ();
-			message = System.IO.File.ReadAllText ("Sec.txt");
+			message = System.IO.File.ReadAllText ("Assets/Text Files/Sec.txt");
 			text.text = "";
 			StartCoroutine (TypeText ());
 		}
 		if (x == "Alarm") {
 			Display_UI ();
-			message = System.IO.File.ReadAllText ("Alarm.txt");
+			message = System.IO.File.ReadAllText ("Assets/Text Files/Alarm.txt");
 			text.text = "";
 			StartCoroutine (TypeText ());
 		}
