@@ -1,17 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.AI;
+
 
 public class StatePatternSquad : MonoBehaviour
 {
-	//public Transform eyes = this;
 	public float sightRange = 20f;
 	public float speed = 10.0f;
 
-
 //	public GameObject squad;
 //	public GameObject enemy;
-
-
 
 	[HideInInspector] public Transform followPlayer;
 	[HideInInspector] public ISquadState currentState;
@@ -25,7 +24,7 @@ public class StatePatternSquad : MonoBehaviour
 	[HideInInspector] public Order_MoveState orderMoveState;
 	[HideInInspector] public Order_DestructState orderDestructState;
 
-	[HideInInspector] public UnityEngine.AI.NavMeshAgent navMeshAgent;
+	[HideInInspector] public NavMeshAgent agent;
 
 
 	private void Awake()

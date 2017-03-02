@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.AI;
+
 
 public class CoverState : ISquadState
 {
@@ -9,6 +12,10 @@ public class CoverState : ISquadState
 	public GameObject enemy;
 	//public GameObject cover;
 
+	//NavMeshAgent agent;
+
+	//agent.GetComponent<NavMeshAgent> ();
+
 	public GameObject[] cover;
 
 	//Useful variables here
@@ -17,16 +24,17 @@ public class CoverState : ISquadState
 	{
 		squad = statePatternSquad;
 
-		player = GameObject.FindGameObjectWithTag ("Squad");
+		//agent.GetComponent<NavMeshAgent> ();
+
+		player = GameObject.FindGameObjectWithTag ("Player");
 		enemy = GameObject.FindGameObjectWithTag ("Enemy");
-		//cover = GameObject.FindGameObjectWithTag ("Cover");
 		cover = GameObject.FindGameObjectsWithTag ("Cover");
 	}
 		
 	public void UpdateState() 
 	{
 		//Call fucntions you want to constantly repeat here
-		Look ();
+		moveToCover ();
 	}
 
 	public void ToIdleState()
@@ -131,21 +139,10 @@ public class CoverState : ISquadState
 
 		squad.transform.position = Vector3.MoveTowards (squad.transform.position, bestCover.transform.position, step);
 
+		//agent.SetDestination (bestCover.transform.position);
 
+		squad.transform.LookAt (bestCover.transform.position);
 
-
-
-		//if (Physics.Raycast (squad.eyes.transform.position, squad.eyes.transform.forward, out hit, squad.sightRange) && hit.collider.CompareTag ("Cover"))
-		//if(Physics.Raycast(squad.transform.position, squad.transform.forward, out hit, squad.sightRange) && hit.collider.CompareTag("Cover")){
-
-		//if (Physics.Raycast (player.transform.position, (cover.transform.position - player.transform.position), out hit, Mathf.Infinity) && hit.collider.CompareTag ("Cover")) {
-			
-			//Debug.DrawRay (squad.transform.position, hit.transform.position, Color.green);
-
-
-			//Debug.DrawRay (squad.transform.position, squad.followPlayer.position, Color.green);
-
-			//squad.transform.position = Vector3.MoveTowards (squad.transform.position, hit.transform.position, step);
-		//}
+		Look ();
 	}
 }
