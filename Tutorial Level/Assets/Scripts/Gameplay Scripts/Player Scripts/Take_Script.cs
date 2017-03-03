@@ -8,10 +8,9 @@ public class Take_Script : MonoBehaviour {
 	Ray ray;
 	RaycastHit ray_hit;
 	public player_stats player_script;
-	Fire_Script F_Script;
 	public Image ColourBar;
 	string Colour = null;
-
+	public Fire_Script Fire;
 	// Use this for initialization
 	void Start () {
 		GameObject ColourObj = GameObject.Find ("Colour");
@@ -48,8 +47,15 @@ public class Take_Script : MonoBehaviour {
 		// if the player tries to take a colour while already having a colour this should resest colour etc but does not
 		//	ColourBar.fillAmount = 1;
 		//	F_Script.shot = 0;
+			//ColourBar.fillAmount = 1;
+		//	Fire.shot = 0;
 			ColourBar.color = Color.red;
 			player_script.sethasColour (true);
+			if (player_script.gethasColour() == true && Input.GetButtonDown("Take")) {
+				ColourBar.fillAmount = 1;
+				Fire_Script.shot = 0;
+				//Debug.Log (Fire_Script.shot);
+			}
 		}
 	}
 
@@ -59,8 +65,15 @@ public class Take_Script : MonoBehaviour {
 		{
 			Colour = c;
 			player_script.Store_Colour (Colour);
+			//ColourBar.fillAmount = 1;
+			//Fire.shot = 0;
 			ColourBar.color = Color.green;
 			player_script.sethasColour (true);
+
+			if (player_script.gethasColour () == true && Input.GetButtonDown ("Take")) {
+				ColourBar.fillAmount = 1;
+				Fire_Script.shot = 0;
+			}
 		}
 	}
 
@@ -70,9 +83,16 @@ public class Take_Script : MonoBehaviour {
 			Colour = c;
 			player_script.Store_Colour (Colour);
 			ColourBar.color = Color.blue;
+			//ColourBar.fillAmount = 1;
+			//Fire.shot = 0;
 	//		ColourBar.fillAmount = 1;
 	//		F_Script.shot = 0;
 			player_script.sethasColour (true);
+
+			if (player_script.gethasColour () == true && Input.GetButtonDown ("Take")) {
+				ColourBar.fillAmount = 1;
+				Fire_Script.shot = 0;
+			}
 		}
 	}
 }

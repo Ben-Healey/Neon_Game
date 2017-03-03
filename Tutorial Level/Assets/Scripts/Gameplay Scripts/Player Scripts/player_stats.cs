@@ -22,14 +22,14 @@ public class player_stats : MonoBehaviour {
 	public void Store_Colour(string C)
 	{
 		Colour = C;
-		Debug.Log ("Stored " + C);
+		//Debug.Log ("Stored " + C);
 
 	}
 
 	public void sethasColour(bool Colour)
 	{
 		hasColour = Colour;
-		Debug.Log ("Colour is now" + hasColour);
+		//Debug.Log ("Colour is now" + hasColour);
 	}
 
 	public bool gethasColour()
