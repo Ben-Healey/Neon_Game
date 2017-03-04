@@ -49,7 +49,8 @@ public class UI_Checker : MonoBehaviour {
 		}
 		if (other.gameObject.name == "Combat_Trigger") {
 			//Only loads next level as combat is not yet in, will instead load a text file once combat is in
-			SceneManager.LoadScene("Set_Up");
+			//SceneManager.LoadScene("Set_Up");
+
 		}
 	}
 		

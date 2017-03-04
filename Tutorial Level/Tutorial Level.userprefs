@@ -1,11 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Gameplay Scripts\Player Scripts\Take_Script.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Gameplay Scripts\Player Scripts\Fire_Script.cs">
     <Files>
-      <File FileName="Assets\Scripts\Gameplay Scripts\Player Scripts\Take_Script.cs" Line="94" Column="26" />
-      <File FileName="Assets\Scripts\Gameplay Scripts\Player Scripts\Fire_Script.cs" Line="16" Column="14" />
-      <File FileName="Assets\Scripts\Gameplay Scripts\Player Scripts\player_stats.cs" Line="28" Column="2" />
+      <File FileName="Assets\Scripts\Gameplay Scripts\Player Scripts\Fire_Script.cs" Line="63" Column="30" />
+      <File FileName="Assets\Scripts\Gameplay Scripts\Player Scripts\player_stats.cs" Line="66" Column="12" />
       <File FileName="Assets\Scripts\Global_Scripts\Global_Script.cs" Line="19" Column="2" />
+      <File FileName="Assets\Scripts\UI Scripts\UI_Checker.cs" Line="53" Column="4" />
+      <File FileName="Assets\Scripts\Gameplay Scripts\Player Scripts\Attributes.cs" Line="38" Column="2" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

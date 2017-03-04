@@ -6,6 +6,7 @@ public class Attributes : MonoBehaviour {
 	// Use this for initialization
 	//public Global_Script Global;
 	public float Health;
+	public float Squad_health;
 	public float MaxHealth;
 	private Image Heathbar;
 	void Start () {
@@ -23,11 +24,6 @@ public class Attributes : MonoBehaviour {
 		return Health;
 	}
 
-	public float Get_Player_Speed(){
-		float speed = 6.0f;
-		return speed;
-	}
-
 	public int damage(){
 		Health -= 25;
 
@@ -39,6 +35,7 @@ public class Attributes : MonoBehaviour {
 		}
 		return 0;
 	}
+
 	public bool Died(){
 		bool isDead = true;
 		return isDead; 
