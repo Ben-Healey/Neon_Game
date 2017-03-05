@@ -18,3 +18,4 @@ public class Global_Script : MonoBehaviour {
 		
 	}
 }
+	

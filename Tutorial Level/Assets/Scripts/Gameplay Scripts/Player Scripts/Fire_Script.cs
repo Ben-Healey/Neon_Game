@@ -7,12 +7,13 @@ public class Fire_Script : MonoBehaviour {
 	RaycastHit ray_hit;
 	public player_stats player_script;
 	public Anim_Script Anim;
+	public static AnimationClip shoot;
 	Image ColourBar;
 	new AudioSource[] audio;
 	AudioSource laser;
 	string Colour = null;
 	float clipSize = 6;
-	public float shot = 0;
+	public static float shot = 0;
 	//public AnimationClip idle;
 	// Use this for initialization
 	void Start () {
