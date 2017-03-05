@@ -59,6 +59,7 @@
      <None Include="Assets\Shaders\Green_Shader.shader" />
      <None Include="Assets\Shaders\Red_Shader.shader" />
      <None Include="Assets\Textures\Level_One_Skybox\ely_darkcity.shader" />
+     <None Include="Assets\Text Files\Combat.txt" />
      <None Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Standard Assets\Effects\ImageEffects\Shaders\BlurEffectConeTaps.shader" />
      <None Include="Assets\Text Files\Puzzle.txt" />
      <None Include="Assets\Text Files\Start.txt" />

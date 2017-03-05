@@ -6,10 +6,28 @@ public class UI_Checker : MonoBehaviour {
 	public UI_Text Checker;
 	string sceneName;
 	Scene currentScene;
+	GameObject D;
+	float movementSpeed = 1.0f;
+	float timeleft = 5.0f;
+	//Doesnt not work atm
+	//IEnumerator Move_Door(){
+		//timeleft -= Time.deltaTime;
+		//if (timeleft < 0 && D.transform.position.y >= -2.5f) {
+		//	Debug.Log ("Door Should Come Down ");
+		//	D.transform.Translate (Vector3.down * movementSpeed * Time.deltaTime); 
+		//	if(transform.position.y == -2.5f){
+				//Stop ();
+		//	}
+		//}
+		//return null;
+//	}
+
+
 	// Use this for initialization
 	void Start () {
 		currentScene = SceneManager.GetActiveScene ();
 		sceneName = currentScene.name;
+		D = GameObject.Find("Combat_Door");
 	}
 	
 	// Update is called once per frame
@@ -50,8 +68,24 @@ public class UI_Checker : MonoBehaviour {
 		if (other.gameObject.name == "Combat_Trigger") {
 			//Only loads next level as combat is not yet in, will instead load a text file once combat is in
 			//SceneManager.LoadScene("Set_Up");
+			//GameObject D = GameObject.Find("Combat_Door");
+			//Debug.Log("Door Test");
+			//timeleft -= Time.deltaTime;
+			//while (timeleft < 0 && D.transform.position.y >= -2.5f) {
+			//	Debug.Log ("Door Should Come Down ");
+			//	D.transform.Translate (Vector3.down * movementSpeed * Time.deltaTime); 
+			//	if(transform.position.y == -2.5f){
+			//		Stop ();
+			//	}
+			//}
+			//StartCoroutine(Move_Door());
+			Destroy(D);
+			Checker.Checker_Function (other.gameObject.name);
 
 		}
+		if (other.gameObject.name == "Exit") {
+			SceneManager.LoadScene ("Set_Up");
+		}
 	}
-		
+
 }

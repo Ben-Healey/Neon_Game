@@ -16,7 +16,8 @@ public class UI_Text : MonoBehaviour {
 					 Puzzle_text,
 					 Squad_text,
 					 Sec_text,
-					 Alarm_text;
+					 Alarm_text,
+					 Combat_text;
 	Scene currentScene;
 
 	IEnumerator TypeText(){
@@ -95,6 +96,12 @@ public class UI_Text : MonoBehaviour {
 			Display_UI ();
 			//message = System.IO.File.ReadAllText ("Assets/Text Files/Alarm.txt");
 			message = Alarm_text.ToString();
+			text.text = "";
+			StartCoroutine (TypeText ());
+		}
+		if (x == "Combat_Trigger") {
+			Display_UI ();
+			message = Combat_text.ToString();
 			text.text = "";
 			StartCoroutine (TypeText ());
 		}
