@@ -37,7 +37,7 @@ public class Puzzle_Script : MonoBehaviour {
 	}
 
 
-	void Blue_Puzzle_Func()
+	public void Blue_Puzzle_Func()
 	{
 		player_script.Store_Colour (null);
 		player_script.sethasColour (false);

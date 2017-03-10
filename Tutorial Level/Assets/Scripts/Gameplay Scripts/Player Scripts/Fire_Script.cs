@@ -58,7 +58,7 @@ public class Fire_Script : MonoBehaviour {
 			shot += 1;
 			ColourBar.fillAmount -= 0.1666f;
 			//May need to change when 
-			ray_hit.transform.gameObject.GetComponentInChildren<Attributes> ().damage ();
+			//ray_hit.transform.gameObject.GetComponentInChildren<Attributes> ().damage ();
 			laser.Play ();
 
 			if (shot == clipSize) {
