@@ -28,6 +28,7 @@ public class Pause_Script : MonoBehaviour {
 	}
 	//Bug: If built and ran and player try to load the pause menu the game will just close
 	//Need to fix 
+	//Update 11/3/17 - Wont even open at all not sure what i have done :/
 	void OnMouseDown()
 	{
 		switch (gameObject.name) {

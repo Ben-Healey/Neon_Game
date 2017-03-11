@@ -45,8 +45,9 @@ public class Puzzle_Script : MonoBehaviour {
 		ray_hit.transform.gameObject.GetComponent<Renderer> ().material.color = Color.blue;
 		GameObject Laser = GameObject.FindWithTag ("Laser");
 		Global_Script.Puzzle_Complete = true;
+		GameObject Bullet = GameObject.Find ("Blue_Bullet");
+		Destroy (Bullet);
 		Destroy (Laser);
-
 	}
 
 }
