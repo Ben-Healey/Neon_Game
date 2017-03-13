@@ -61,15 +61,14 @@ public class AttackState : ISquadState
 	{
 		RaycastHit hit;
 
-		//if (Physics.Raycast (squad.eyes.transform.position, squad.eyes.transform.forward, out hit, squad.sightRange) && hit.collider.CompareTag ("Player")) {
 		if(Physics.Raycast(squad.transform.position, squad.transform.forward, out hit, squad.sightRange) && hit.collider.CompareTag("Enemy")){
-			Debug.Log ("Enemy spotted");
+			//Debug.Log ("Enemy spotted");
 			squad.followPlayer = hit.transform;
 			Debug.DrawRay (squad.transform.position, squad.followPlayer.position, Color.red);
-			Debug.Log ("switching to cover state");
+			//Debug.Log ("switching to cover state");
 			ToCoverState ();
 		}
-		Debug.Log ("No enemies in sight");
+		//Debug.Log ("No enemies in sight");
 	}
 
 }

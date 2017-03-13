@@ -6,16 +6,17 @@ using UnityEngine.AI;
 
 public class CoverState : ISquadState
 {
+
+	public List<GameObject> coverList = new List<GameObject> ();
+	public List<GameObject> validCover = new List<GameObject> ();
+
+
 	private readonly StatePatternSquad squad;
+
+	private Vector3 Direction;
 
 	public GameObject player;
 	public GameObject enemy;
-	//public GameObject cover;
-
-	//NavMeshAgent agent;
-
-	//agent.GetComponent<NavMeshAgent> ();
-
 	public GameObject[] cover;
 
 	//Useful variables here
@@ -23,9 +24,6 @@ public class CoverState : ISquadState
 	public CoverState (StatePatternSquad statePatternSquad)
 	{
 		squad = statePatternSquad;
-
-		//agent.GetComponent<NavMeshAgent> ();
-
 		player = GameObject.FindGameObjectWithTag ("Player");
 		enemy = GameObject.FindGameObjectWithTag ("Enemy");
 		cover = GameObject.FindGameObjectsWithTag ("Cover");
@@ -34,7 +32,26 @@ public class CoverState : ISquadState
 	public void UpdateState() 
 	{
 		//Call fucntions you want to constantly repeat here
-		moveToCover ();
+		//look();
+
+		for (int i = 0; i < coverList.Count; i++)
+		{
+
+			if (coverList [i].GetComponent<CoverEnabler> ().CheckValid ())
+			{
+				if(!validCover.Contains(coverList[i]))
+					validCover.Add(coverList[i]);
+			}
+
+			if (validCover.Contains (coverList [i]))
+			{
+				if (!coverList [i].GetComponent<CoverEnabler> ().CheckValid ())
+				{
+					validCover.Remove(coverList[i]);
+				}
+			}
+		}
+		moveToCover();
 	}
 
 	public void ToIdleState()
@@ -75,27 +92,69 @@ public class CoverState : ISquadState
 	}
 
 
+	void OnTriggerEnter (Collider _collision)
+	{
+		if (_collision.gameObject.CompareTag ("Cover"))
+			coverList.Add (_collision.gameObject);
+	}
 
+	void OnTriggerExit (Collider _collision)
+	{
+		if (_collision.gameObject.CompareTag ("Cover"))
+		{
+			if(validCover.Contains(_collision.gameObject))
+				validCover.Remove(_collision.gameObject);
+
+			coverList.Remove (_collision.gameObject);
+		}
+	}
+
+
+	private void moveToCover()
+	{
+		Transform bestTarget = null;
+		float closestDistanceSqr = Mathf.Infinity;
+
+		foreach (GameObject cover in validCover)
+		{
+			Vector3 directionToTarget = cover.transform.position - squad.transform.position;
+			float distSqrToTgt = directionToTarget.sqrMagnitude;
+
+			if (distSqrToTgt < closestDistanceSqr)
+			{
+				closestDistanceSqr = distSqrToTgt;
+				bestTarget = cover.transform;
+			}
+		}
+
+		if (bestTarget == null)
+		{
+			Debug.Log ("Best target = null");
+			Vector3 goForward = squad.transform.position + Vector3.forward;
+			bestTarget = player.transform;
+		}
+		Debug.Log ("Moving to cover");
+		squad.agent.SetDestination (bestTarget.position);
+		//return bestTarget.position;
+	}
+
+}
+
+
+	//STUFF BELOW WORKS, BUT WITH A MASSIVE OVERFLOW ISSUE
+	/*
 	private void Look()
 	{
 		RaycastHit hit;
 
-		//if (Physics.Raycast (squad.eyes.transform.position, squad.eyes.transform.forward, out hit, squad.sightRange) && hit.collider.CompareTag ("Player"))
-		if (Physics.Raycast (player.transform.position, (enemy.transform.position - player.transform.position), out hit, Mathf.Infinity) && hit.collider.CompareTag ("Enemy")) {
-			Debug.Log ("Enemy spotted");
+		Direction = enemy.transform.position - player.transform.position;
+
+		if (Physics.Raycast (player.transform.position, Direction, out hit, 50) && hit.collider.CompareTag ("Enemy"))
+		{
 			squad.followPlayer = hit.transform;
-			//Debug.DrawRay (squad.transform.position, squad.followPlayer.position, Color.red);
 			Debug.DrawRay (squad.transform.position, hit.transform.position, Color.red);
-			Debug.Log ("Moving to cover");
 			moveToCover ();
 		}
-
-		Debug.Log ("In cover");
-
-		Debug.Log ("No enemies in sight");
-
-		Debug.Log ("Switching to Idle state");
-
 		ToIdleState ();
 	}
 
@@ -105,21 +164,10 @@ public class CoverState : ISquadState
 		float step;
 		step = squad.speed * Time.deltaTime;
 
-
-
 		Transform bestCover = null;
 		float nearest = Mathf.Infinity;
 
 		foreach (GameObject Cover in cover) {
-
-			bool isValid = false;
-
-			if (Physics.Raycast (Cover.transform.position, (Cover.transform.position - player.transform.position), out hit, Mathf.Infinity)) {
-				isValid = true;
-			}
-
-			if (isValid == true) {
-
 
 				Vector3 targetDir = Cover.transform.position - enemy.transform.position;
 				float targetDist = targetDir.sqrMagnitude;
@@ -131,18 +179,12 @@ public class CoverState : ISquadState
 				if (targetDist < nearest) {
 					nearest = targetDist;
 					bestCover = Cover.transform;
-					Debug.DrawRay (Cover.transform.position, (player.transform.position - Cover.transform.position), Color.green);
 				}
-			}
 		}
 
-
-		squad.transform.position = Vector3.MoveTowards (squad.transform.position, bestCover.transform.position, step);
-
-		//agent.SetDestination (bestCover.transform.position);
+		squad.agent.SetDestination (bestCover.transform.position);
 
 		squad.transform.LookAt (bestCover.transform.position);
 
 		Look ();
-	}
-}
+	}*/

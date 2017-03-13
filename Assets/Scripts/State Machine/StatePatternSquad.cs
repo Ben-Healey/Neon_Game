@@ -33,7 +33,7 @@ public class StatePatternSquad : MonoBehaviour
 		idleState = new IdleState (this);
 		attackState = new AttackState (this);
 
-		navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent> ();
+		agent = GetComponent<NavMeshAgent> ();
 	}
 
 

@@ -10,7 +10,7 @@ public class IdleState : ISquadState
 	public GameObject player;
 	public GameObject enemy;
 
-	NavMeshAgent agent;
+	//NavMeshAgent agent = GetComponent<NavMeshAgent>();
 
 	public float speed = 3 * Time.deltaTime;
 
@@ -32,7 +32,7 @@ public class IdleState : ISquadState
 	{
 		squad = statePatternSquad;
 
-		agent.GetComponent<NavMeshAgent> ();
+		//agent = GetComponent<NavMeshAgent> ();
 
 		player = GameObject.FindGameObjectWithTag ("Player");
 		enemy = GameObject.FindGameObjectWithTag ("Enemy");
@@ -89,16 +89,16 @@ public class IdleState : ISquadState
 		RaycastHit hit;
 
 		if (Physics.Raycast (squad.transform.position, (enemy.transform.position - squad.transform.position), out hit, Mathf.Infinity) && hit.collider.CompareTag ("Enemy")) {
-			Debug.Log ("Enemy spotted");
+			//Debug.Log ("Enemy spotted");
 			squad.followPlayer = hit.transform;
 			Debug.DrawRay (squad.transform.position, squad.followPlayer.position, Color.red);
-			Debug.Log ("Switching to cover state");
+			//Debug.Log ("Switching to cover state");
 			ToCoverState ();
 		}
 
 		follow ();
 
-		Debug.Log ("No enemies in sight");
+		//Debug.Log ("No enemies in sight");
 	}
 
 
@@ -125,7 +125,7 @@ public class IdleState : ISquadState
 			newDir = Vector3.RotateTowards (squad.transform.forward, targetDir, speed, 0.0f);
 			Debug.DrawRay (squad.transform.position, newDir, Color.red);
 			squad.transform.rotation = Quaternion.LookRotation (newDir);
-			agent.SetDestination (player.transform.position);
+			squad.agent.SetDestination (player.transform.position);
 		}
 	}
 }
