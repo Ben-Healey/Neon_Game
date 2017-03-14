@@ -1,10 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Gameplay Scripts\Player Scripts\Bullet_Script.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Gameplay Scripts\Enemy Scripts\Cover_Enabler.cs">
     <Files>
-      <File FileName="Assets\Scripts\Gameplay Scripts\Player Scripts\player_stats.cs" Line="17" Column="35" />
-      <File FileName="Assets\Scripts\Gameplay Scripts\Player Scripts\Bullet_Script.cs" Line="56" Column="30" />
-      <File FileName="Assets\Scripts\Gameplay Scripts\Player Scripts\Puzzle_Script.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Gameplay Scripts\Enemy Scripts\Cover_Enabler.cs" Line="56" Column="2" />
+      <File FileName="Assets\Scripts\Gameplay Scripts\Enemy Scripts\Enemy_Find_Cover.cs" Line="25" Column="5" />
+      <File FileName="Assets\Scripts\UI Scripts\UI_Text.cs" Line="107" Column="11" />
+      <File FileName="Assets\Scripts\UI Scripts\UI_Checker.cs" Line="88" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

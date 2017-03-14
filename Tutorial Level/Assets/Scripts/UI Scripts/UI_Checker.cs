@@ -7,6 +7,7 @@ public class UI_Checker : MonoBehaviour {
 	string sceneName;
 	Scene currentScene;
 	GameObject D;
+	GameObject[] enemy;
 	float movementSpeed = 1.0f;
 	float timeleft = 5.0f;
 	//Doesnt not work atm
@@ -28,6 +29,7 @@ public class UI_Checker : MonoBehaviour {
 		currentScene = SceneManager.GetActiveScene ();
 		sceneName = currentScene.name;
 		D = GameObject.Find("Combat_Door");
+		enemy = GameObject.FindGameObjectsWithTag ("Enemy");
 	}
 	
 	// Update is called once per frame
@@ -81,6 +83,10 @@ public class UI_Checker : MonoBehaviour {
 			//StartCoroutine(Move_Door());
 			Destroy(D);
 			Checker.Checker_Function (other.gameObject.name);
+
+			for (int i = 0; i < enemy.Length; i++) {
+				enemy [i].GetComponent<Enemy_Find_Cover> ().setIdle ();
+			}
 
 		}
 		if (other.gameObject.name == "Exit") {

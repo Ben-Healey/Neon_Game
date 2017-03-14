@@ -34,7 +34,7 @@ public class Fire_Script : MonoBehaviour {
 		if (Physics.Raycast (ray, out ray_hit)) {
 			if (ray_hit.collider.tag == "Enemy") {
 				Fire_Enemy ();
-				//Debug.Log ("Hitting Enemy");
+				Debug.Log ("Hitting Enemy");
 			}
 
 			Colour = player_script.Get_Colour ();
