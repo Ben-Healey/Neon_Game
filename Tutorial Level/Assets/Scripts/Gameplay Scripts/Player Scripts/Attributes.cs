@@ -27,12 +27,12 @@ public class Attributes : MonoBehaviour {
 	public int damage(){
 		Health -= 25;
 
-		Heathbar.fillAmount = Health / MaxHealth;
 
 		if (Health <= 0) {
 			Destroy (gameObject);
 			Global_Script.Destoryed_Targets += 1;
 		}
+		Heathbar.fillAmount = Health / MaxHealth;
 		return 0;
 	}
 

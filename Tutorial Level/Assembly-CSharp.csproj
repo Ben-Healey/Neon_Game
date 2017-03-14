@@ -46,6 +46,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Gameplay Scripts\Enemy Scripts\Cover_Enabler.cs" />
+     <Compile Include="Assets\Scripts\Gameplay Scripts\Enemy Scripts\Enemy_Find_Cover.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scripts\Light Scripts\Light_Script.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scripts\Light Scripts\Shader_Switch.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scripts\Misc\Alarm_Script.cs" />
@@ -55,6 +57,7 @@
      <Compile Include="Assets\Scripts\Gameplay Scripts\Misc\Spotted_Test.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Anim_Script.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Attributes.cs" />
+     <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Bullet_Script.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Crosshair_Script.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Fire_Script.cs" />
      <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Puzzle_Script.cs" />
@@ -120,9 +123,6 @@
      <None Include="Assets\Text Files\Next.txt" />
      <None Include="Assets\Shaders\CRT.shader" />
      <None Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>E:/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>E:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -137,9 +137,6 @@
  </Reference>
  <Reference Include="UnityEngine.HoloLens">
  <HintPath>E:/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Purchasing">
- <HintPath>E:/Unity/Editor/Data/UnityExtensions/Unity/UnityPurchasing/UnityEngine.Purchasing.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.VR">
  <HintPath>E:/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>

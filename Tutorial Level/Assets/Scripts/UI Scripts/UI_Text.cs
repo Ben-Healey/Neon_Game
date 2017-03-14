@@ -104,6 +104,7 @@ public class UI_Text : MonoBehaviour {
 			message = Combat_text.ToString();
 			text.text = "";
 			StartCoroutine (TypeText ());
+			return;
 		}
 	}
 	//Simple Function to turn text ui element back on 

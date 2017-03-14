@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class Fire_Script : MonoBehaviour {
 	Ray ray;
 	RaycastHit ray_hit;
+	//public GameObject projectile;
 	public player_stats player_script;
 	public Anim_Script Anim;
 	public static AnimationClip shoot;
@@ -52,10 +53,12 @@ public class Fire_Script : MonoBehaviour {
 		//Colour = player_script.Get_Colour ();
 		if(Input.GetButtonDown("Fire1") && player_script.Get_Colour() == "Red Light")
 		{
+			//GameObject bullet = Instantiate (projectile, transform.position, Quaternion.identity) as GameObject;
+			//bullet.GetComponent<Rigidbody> ().AddForce (transform.forward * 10);
 			shot += 1;
 			ColourBar.fillAmount -= 0.1666f;
 			//May need to change when 
-			ray_hit.transform.gameObject.GetComponentInChildren<Attributes> ().damage ();
+			//ray_hit.transform.gameObject.GetComponentInChildren<Attributes> ().damage ();
 			laser.Play ();
 
 			if (shot == clipSize) {
