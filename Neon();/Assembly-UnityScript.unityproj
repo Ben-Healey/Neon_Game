@@ -6,10 +6,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{9F1E7112-1B45-A0C8-335F-5BB30FF8E39E}</ProjectGuid>
+    <ProjectGuid>{9F482DA1-2640-76F9-EAA5-6E62BE0599AF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Assembly-UnityScript</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>Assets</BaseDirectory>
@@ -46,62 +46,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Gameplay Scripts\Enemy Scripts\Cover_Enabler.cs" />
-     <Compile Include="Assets\Scripts\Gameplay Scripts\Enemy Scripts\Enemy_Find_Cover.cs" />
-     <Compile Include="Assets\Scripts\Gameplay Scripts\Light Scripts\Light_Script.cs" />
-     <Compile Include="Assets\Scripts\Gameplay Scripts\Light Scripts\Shader_Switch.cs" />
-     <Compile Include="Assets\Scripts\Gameplay Scripts\Misc\Alarm_Script.cs" />
-     <Compile Include="Assets\Scripts\Gameplay Scripts\Misc\CameraFacingBillboard.cs" />
-     <Compile Include="Assets\Scripts\Gameplay Scripts\Misc\Door_Test.cs" />
-     <Compile Include="Assets\Scripts\Gameplay Scripts\Misc\Floor_Movement.cs" />
-     <Compile Include="Assets\Scripts\Gameplay Scripts\Misc\Spotted_Test.cs" />
-     <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Anim_Script.cs" />
-     <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Attributes.cs" />
-     <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Bullet_Script.cs" />
-     <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Crosshair_Script.cs" />
-     <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Fire_Script.cs" />
-     <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Puzzle_Script.cs" />
-     <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Take_Script.cs" />
-     <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\canMouseLook.cs" />
-     <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\playerMovement.cs" />
-     <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\player_stats.cs" />
-     <Compile Include="Assets\Scripts\Gameplay Scripts\Triggers\Floor_Trig.cs" />
-     <Compile Include="Assets\Scripts\Global_Scripts\Global_Script.cs" />
-     <Compile Include="Assets\Scripts\Menu Scripts\Boot_script.cs" />
-     <Compile Include="Assets\Scripts\Menu Scripts\CRT.cs" />
-     <Compile Include="Assets\Scripts\Menu Scripts\Draw_Script.cs" />
-     <Compile Include="Assets\Scripts\Menu Scripts\Input_Script.cs" />
-     <Compile Include="Assets\Scripts\Menu Scripts\Log_Script.cs" />
-     <Compile Include="Assets\Scripts\Menu Scripts\Menu_Script.cs" />
-     <Compile Include="Assets\Scripts\Menu Scripts\Mouse_Script.cs" />
-     <Compile Include="Assets\Scripts\Menu Scripts\Pause_Script.cs" />
-     <Compile Include="Assets\Scripts\Sound.cs" />
-     <Compile Include="Assets\Scripts\Temp_Script.cs" />
-     <Compile Include="Assets\Scripts\UI Scripts\UI_Checker.cs" />
-     <Compile Include="Assets\Scripts\UI Scripts\UI_Text.cs" />
-     <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Scripts\ArenaControl.cs" />
-     <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Scripts\Crosshair.cs" />
-     <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Scripts\Health.cs" />
-     <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Scripts\Health_BlackTexture.cs" />
-     <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Scripts\Light_Delete.cs" />
-     <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Scripts\Listener_Control.cs" />
-     <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Scripts\Pause.cs" />
-     <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Scripts\Rocket.cs" />
-     <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Scripts\_Explosion Scripts\Explosion.cs" />
-     <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Scripts\_Explosion Scripts\GraphicExplosion.cs" />
-     <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Scripts\_Robots\Robot_Destroy.cs" />
-     <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Scripts\_Robots\Robot_Gun.cs" />
-     <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Scripts\_Robots\Robot_Move.cs" />
-     <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Scripts\_Robots\Robot_RotateTop.cs" />
-     <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Scripts\_Weapons\Gun.cs" />
-     <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Scripts\_Weapons\RocketLauncher.cs" />
-     <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Scripts\_Weapons\SnaiperRifle.cs" />
-     <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Scripts\_Weapons\SnaiperRifle_AimControl.cs" />
-     <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Scripts\_Weapons\WeaponManager.cs" />
-     <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
-     <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Standard Assets\Effects\ImageEffects\Scripts\Blur.cs" />
-     <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Standard Assets\Scripts\General Scripts\ActivateTrigger.cs" />
-     <Compile Include="Assets\Unity_Store_Stuff\Reichsrevolver_M1879\Scripts\RevolverController.cs" />
+     <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Scripts\Text_balance.js" />
+     <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Scripts\gui_balance.js" />
+     <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Standard Assets\Character Controllers\Sources\Scripts\CharacterMotor.js" />
+     <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Standard Assets\Character Controllers\Sources\Scripts\FPSInputController.js" />
+     <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Standard Assets\Character Controllers\Sources\Scripts\PlatformInputController.js" />
+     <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Standard Assets\FirstPersonControl.js" />
+     <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Standard Assets\Joystick.js" />
+     <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Standard Assets\Particles\Legacy Particles\TimedObjectDestructor.js" />
+     <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Standard Assets\Scripts\Camera Scripts\MouseOrbit.js" />
+     <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Standard Assets\Scripts\Camera Scripts\SmoothFollow.js" />
+     <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Standard Assets\Scripts\Camera Scripts\SmoothLookAt.js" />
+     <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Standard Assets\Scripts\General Scripts\DragRigidbody.js" />
+     <Compile Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Standard Assets\Scripts\rotate.js" />
+     <Compile Include="Assets\Unity_Store_Stuff\RDL\Security_Pack\Scripts\scr_camera_rotate.js" />
      <None Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Textures &amp; Materials\_Font\3dText.shader" />
      <None Include="Assets\Text Files\Sec.txt" />
      <None Include="Assets\Text Files\Title.txt" />
@@ -123,6 +81,9 @@
      <None Include="Assets\Text Files\Next.txt" />
      <None Include="Assets\Shaders\CRT.shader" />
      <None Include="Assets\Unity_Store_Stuff\FPS Starter Kit - Lite\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
+ <Reference Include="UnityEngine.Advertisements">
+ <HintPath>E:/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>E:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -137,6 +98,9 @@
  </Reference>
  <Reference Include="UnityEngine.HoloLens">
  <HintPath>E:/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Purchasing">
+ <HintPath>E:/Unity/Editor/Data/UnityExtensions/Unity/UnityPurchasing/UnityEngine.Purchasing.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.VR">
  <HintPath>E:/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
