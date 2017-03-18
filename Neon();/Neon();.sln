@@ -1,0 +1,35 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{799B605A-5F87-4E2F-A89A-8D1F2230D659}") = "Neon();", "Assembly-CSharp.csproj", "{40ACDCF3-9F85-0B8F-9A2D-2A21175984FB}"
+EndProject
+Project("{799B605A-5F87-4E2F-A89A-8D1F2230D659}") = "Neon();", "Assembly-CSharp-Editor.csproj", "{BBF99917-73B5-8866-D555-FA6D13CE1147}"
+EndProject
+Project("{799B605A-5F87-4E2F-A89A-8D1F2230D659}") = "Neon();", "Assembly-UnityScript.unityproj", "{54BC453E-3974-EAFC-E280-8AB2D6FF53E2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40ACDCF3-9F85-0B8F-9A2D-2A21175984FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40ACDCF3-9F85-0B8F-9A2D-2A21175984FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40ACDCF3-9F85-0B8F-9A2D-2A21175984FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40ACDCF3-9F85-0B8F-9A2D-2A21175984FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBF99917-73B5-8866-D555-FA6D13CE1147}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBF99917-73B5-8866-D555-FA6D13CE1147}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBF99917-73B5-8866-D555-FA6D13CE1147}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBF99917-73B5-8866-D555-FA6D13CE1147}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54BC453E-3974-EAFC-E280-8AB2D6FF53E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54BC453E-3974-EAFC-E280-8AB2D6FF53E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54BC453E-3974-EAFC-E280-8AB2D6FF53E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54BC453E-3974-EAFC-E280-8AB2D6FF53E2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
