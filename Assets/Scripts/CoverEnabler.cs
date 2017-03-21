@@ -7,9 +7,11 @@ public class CoverEnabler : MonoBehaviour {
 	public bool isValid = false;
 	public bool squadValid = false;
 	public bool playerValid = false;
+	public bool enemyValid = false;
 
 	GameObject player;
 	GameObject[] squad;
+	GameObject[] enemy;
 
 	Ray checkRay;
 	RaycastHit hit;
@@ -19,6 +21,7 @@ public class CoverEnabler : MonoBehaviour {
 	void Start () {
 		player = GameObject.FindGameObjectWithTag ("Player");
 		squad = GameObject.FindGameObjectsWithTag ("Squad");
+		enemy = GameObject.FindGameObjectsWithTag ("Enemy");
 
 		checkRay.origin = gameObject.transform.position;
 	}
@@ -27,17 +30,19 @@ public class CoverEnabler : MonoBehaviour {
 	{
 		isValid = false;
 
-		checkPlayer ();
-		checkSquad ();
+		//checkPlayer ();
+		//checkSquad ();
+		checkEnemy ();
 
-		if (playerValid && squadValid)
+		if (enemyValid)
 		{
 			isValid = true;
-			Debug.Log ("isValid = " + isValid);
+			//Debug.Log ("isValid = " + isValid);
 		}
 		return isValid;
 	}
 
+	/*
 	bool checkPlayer()
 	{
 		playerValid = false;
@@ -53,19 +58,20 @@ public class CoverEnabler : MonoBehaviour {
 		return playerValid;
 	}
 
-
 	bool checkSquad()
 	{
 		squadValid = false;
 
 		bool squadInvalid = false;
 
-		for (int i = 0; i < squad.Length; i++)
+		for (int i = 0; i < squad.Length; i++) {
+			
 			checkRay.direction = squad [i].transform.position - gameObject.transform.position;
 
-		Physics.Raycast (checkRay, out hit, 50.0f);
-		if (hit.collider.CompareTag ("Squad"))
-			squadValid = true;
+			Physics.Raycast (checkRay, out hit, 50.0f);
+			if (hit.collider.CompareTag ("Squad"))
+				squadValid = true;
+		}
 
 		//if (!squadInvalid)
 		//	squadValid = true;
@@ -73,10 +79,26 @@ public class CoverEnabler : MonoBehaviour {
 		Debug.Log ("squadValid = " + squadValid);
 		return squadValid;
 	}
+	*/
 
 
+	bool checkEnemy()
+	{
+		bool enemyInvalid = false;
 
+		for (int i = 0; i < enemy.Length; i++) {
+			checkRay.direction = enemy[i].transform.position - gameObject.transform.position;
 
+			Physics.Raycast (checkRay, out hit);
+			if (hit.collider.CompareTag ("Enemy"))
+				enemyInvalid = true;
+		}
+
+		if (!enemyInvalid)
+			enemyValid = true;
+
+		return enemyValid;
+	}
 
 	// Update is called once per frame
 	//void Update () {

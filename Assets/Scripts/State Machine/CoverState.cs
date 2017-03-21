@@ -7,11 +7,12 @@ using UnityEngine.AI;
 public class CoverState : ISquadState
 {
 
-	public List<GameObject> coverList = new List<GameObject> ();
-	public List<GameObject> validCover = new List<GameObject> ();
+	//public List<GameObject> coverList = new List<GameObject> ();
+	//public List<GameObject> validCover = new List<GameObject> ();
 
 
 	private readonly StatePatternSquad squad;
+	//private readonly StatePatternSquad
 
 	private Vector3 Direction;
 
@@ -20,7 +21,10 @@ public class CoverState : ISquadState
 	public GameObject[] cover;
 
 	//Useful variables here
-
+	void Start()
+	{
+		Debug.Log ("COVER STATE IS WOKE");
+	}
 	public CoverState (StatePatternSquad statePatternSquad)
 	{
 		squad = statePatternSquad;
@@ -34,23 +38,25 @@ public class CoverState : ISquadState
 		//Call fucntions you want to constantly repeat here
 		//look();
 
-		for (int i = 0; i < coverList.Count; i++)
+		for (int i = 0; i < squad.coverList.Count; i++)
 		{
 
-			if (coverList [i].GetComponent<CoverEnabler> ().CheckValid ())
+			if (squad.coverList [i].GetComponent<CoverEnabler> ().CheckValid ())
 			{
-				if(!validCover.Contains(coverList[i]))
-					validCover.Add(coverList[i]);
+				if(!squad.validCover.Contains(squad.coverList[i]))
+					squad.validCover.Add(squad.coverList[i]);
 			}
 
-			if (validCover.Contains (coverList [i]))
+			if (squad.validCover.Contains (squad.coverList [i]))
 			{
-				if (!coverList [i].GetComponent<CoverEnabler> ().CheckValid ())
+				if (!squad.coverList [i].GetComponent<CoverEnabler> ().CheckValid ())
 				{
-					validCover.Remove(coverList[i]);
+					squad.validCover.Remove(squad.coverList[i]);
 				}
 			}
 		}
+		//Debug.Log("size of CoverList: " + squad.coverList.Count);
+		//Debug.Log("size of ValidCover: " + squad.validCover.Count);
 		moveToCover();
 	}
 
@@ -91,23 +97,27 @@ public class CoverState : ISquadState
 		squad.currentState = squad.orderDestructState;
 	}
 
-
+	/*
 	void OnTriggerEnter (Collider _collision)
 	{
-		if (_collision.gameObject.CompareTag ("Cover"))
-			coverList.Add (_collision.gameObject);
+		//if (_collision.gameObject.CompareTag ("Cover"))
+		//{
+			Debug.Log ("adding to list");
+			squad.coverList.Add (_collision.gameObject);
+		//}
 	}
 
 	void OnTriggerExit (Collider _collision)
 	{
 		if (_collision.gameObject.CompareTag ("Cover"))
 		{
-			if(validCover.Contains(_collision.gameObject))
-				validCover.Remove(_collision.gameObject);
-
-			coverList.Remove (_collision.gameObject);
+			if(squad.validCover.Contains(_collision.gameObject))
+				squad.validCover.Remove(_collision.gameObject);
+			Debug.Log ("removing from list");
+			squad.coverList.Remove (_collision.gameObject);
 		}
 	}
+	*/
 
 
 	private void moveToCover()
@@ -115,7 +125,7 @@ public class CoverState : ISquadState
 		Transform bestTarget = null;
 		float closestDistanceSqr = Mathf.Infinity;
 
-		foreach (GameObject cover in validCover)
+		foreach (GameObject cover in squad.validCover)
 		{
 			Vector3 directionToTarget = cover.transform.position - squad.transform.position;
 			float distSqrToTgt = directionToTarget.sqrMagnitude;
@@ -129,19 +139,21 @@ public class CoverState : ISquadState
 
 		if (bestTarget == null)
 		{
-			Debug.Log ("Best target = null");
-			Vector3 goForward = squad.transform.position + Vector3.forward;
+			//Debug.Log ("Best target = null");
+			// Vector3 goForward = squad.transform.position + Vector3.forward;
 			bestTarget = player.transform;
 		}
-		Debug.Log ("Moving to cover");
+		//Debug.Log ("Moving to cover");
 		squad.agent.SetDestination (bestTarget.position);
+
+		//squad.transform.LookAt (bestTarget.position);
 		//return bestTarget.position;
 	}
 
 }
 
 
-	//STUFF BELOW WORKS, BUT WITH A MASSIVE OVERFLOW ISSUE
+	//STUFF BELOW "WORKS", BUT WITH A MASSIVE OVERFLOW ISSUE
 	/*
 	private void Look()
 	{

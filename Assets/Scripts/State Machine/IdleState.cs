@@ -9,6 +9,7 @@ public class IdleState : ISquadState
 
 	public GameObject player;
 	public GameObject enemy;
+	public GameObject[] othSquad;
 
 	//NavMeshAgent agent = GetComponent<NavMeshAgent>();
 
@@ -18,13 +19,18 @@ public class IdleState : ISquadState
 	public float dist = 10.0f;
 
 
-	public float minRange = 2.0f;
+	public float minRange = 3.0f;
 	public float maxRange = 30.0f;
 	public float separation;
 	public Vector3 DistancE;
+
+	public float squadSep;
+	public Vector3 squadDist;
+
 	public Vector3 targetDir;
 	float minOne = -1;
 	Vector3 newDir;
+	private float vSpeed = 0;
 
 	//Useful variables here
 
@@ -36,6 +42,7 @@ public class IdleState : ISquadState
 
 		player = GameObject.FindGameObjectWithTag ("Player");
 		enemy = GameObject.FindGameObjectWithTag ("Enemy");
+		othSquad = GameObject.FindGameObjectsWithTag ("Squad");
 	}
 
 	public void UpdateState()
@@ -105,27 +112,60 @@ public class IdleState : ISquadState
 	private void follow()
 	{
 
-		targetDir = player.transform.position - squad.transform.position;
-		DistancE.x = player.transform.position.x - squad.transform.position.x;
-		DistancE.z = player.transform.position.z - squad.transform.position.z;
+		//squad.myAnimator.SetFloat ("VSpeed", Input.GetAxis ("Vertical"));
+		for (int i = 0; i < othSquad.Length; i++) {
 
-		if(DistancE.x <=  0)
-			DistancE.x = DistancE.x * minOne;
+			targetDir = player.transform.position - squad.transform.position;
+			DistancE.x = player.transform.position.x - squad.transform.position.x;
+			DistancE.z = player.transform.position.z - squad.transform.position.z;
 
-		if(DistancE.z <=  0)
-			DistancE.z = DistancE.z * minOne;
+			if (DistancE.x <= 0)
+				DistancE.x = DistancE.x * minOne;
 
-		//PYTHAGORAS FOR SEPARATION BETWEEN PLAYER AND SQUAD
-		separation = (DistancE.x * DistancE.x) + (DistancE.z * DistancE.z);
-		separation = Mathf.Sqrt (separation);
+			if (DistancE.z <= 0)
+				DistancE.z = DistancE.z * minOne;
+
+			//PYTHAGORAS FOR SEPARATION BETWEEN PLAYER AND SQUAD
+			separation = (DistancE.x * DistancE.x) + (DistancE.z * DistancE.z);
+			separation = Mathf.Sqrt (separation);
 
 
-		if ((separation >= minRange) && (separation <= maxRange))
-		{
-			newDir = Vector3.RotateTowards (squad.transform.forward, targetDir, speed, 0.0f);
-			Debug.DrawRay (squad.transform.position, newDir, Color.red);
-			squad.transform.rotation = Quaternion.LookRotation (newDir);
-			squad.agent.SetDestination (player.transform.position);
+
+			//PYTHAGORAS FOR SEPARATION BETWEEN SQUAD AND SQUAD (HOPEFULLY)
+			squadDist.x = squad.transform.position.x - othSquad [i].transform.position.x;
+			squadDist.z = squad.transform.position.z - othSquad [i].transform.position.z;
+
+			if (squadDist.x <= 0)
+				squadDist.x = squadDist.x * minOne;
+
+			if (squadDist.z <= 0)
+				squadDist.z = squadDist.z * minOne;
+
+			squadSep = (squadDist.x * squadDist.x) + (squadDist.z * squadDist.z);
+			squadSep = Mathf.Sqrt (squadSep);
+
+
+
+			if (squadSep <= minRange)
+			{
+				//squad.agent.transform.position.y += 10;
+			}
+
+
+
+
+			if ((separation >= minRange) && (separation <= maxRange))
+			{
+				newDir = Vector3.RotateTowards (squad.transform.forward, targetDir, speed, 0.0f);
+				Debug.DrawRay (squad.transform.position, newDir, Color.red);
+				squad.transform.rotation = Quaternion.LookRotation (newDir);
+				squad.agent.SetDestination (player.transform.position);
+
+				squad.myAnimator.SetFloat ("VSpeed", vSpeed++);
+			} else
+			{
+				squad.myAnimator.SetFloat ("VSpeed", 0);
+			}
 		}
 	}
 }

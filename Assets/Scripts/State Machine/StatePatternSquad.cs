@@ -9,8 +9,13 @@ public class StatePatternSquad : MonoBehaviour
 	public float sightRange = 20f;
 	public float speed = 10.0f;
 
+	public List<GameObject> coverList;// = new List<GameObject> ();
+	public List<GameObject> validCover;// = new List<GameObject> ();
+
 //	public GameObject squad;
 //	public GameObject enemy;
+
+	public bool MoveTo;
 
 	[HideInInspector] public Transform followPlayer;
 	[HideInInspector] public ISquadState currentState;
@@ -24,7 +29,8 @@ public class StatePatternSquad : MonoBehaviour
 	[HideInInspector] public Order_MoveState orderMoveState;
 	[HideInInspector] public Order_DestructState orderDestructState;
 
-	[HideInInspector] public NavMeshAgent agent;
+	public NavMeshAgent agent;
+	public Animator myAnimator;
 
 
 	private void Awake()
@@ -32,8 +38,12 @@ public class StatePatternSquad : MonoBehaviour
 		coverState = new CoverState (this);
 		idleState = new IdleState (this);
 		attackState = new AttackState (this);
+		orderMoveState = new Order_MoveState (this);
 
+		myAnimator = GetComponent<Animator> ();
 		agent = GetComponent<NavMeshAgent> ();
+		coverList = new List<GameObject> ();
+		validCover = new List<GameObject> ();
 	}
 
 
@@ -41,6 +51,8 @@ public class StatePatternSquad : MonoBehaviour
 	void Start ()
 	{
 		currentState = idleState;
+		//currentState = orderMoveState;
+		MoveTo = GetComponent<characterController> ().getMOVETO();
 	//	squad = GameObject.FindGameObjectsWithTag ("squad");
 	//	enemy = GameObject.FindGameObjectsWithTag ("enemy");
 	}
@@ -48,9 +60,36 @@ public class StatePatternSquad : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		if (MoveTo == true)
+		{
+			currentState = orderMoveState;
+		}
+
 		currentState.UpdateState ();
 
-		Debug.Log(currentState);
+		//Debug.Log(currentState);
+	}
+
+
+
+	void OnTriggerEnter (Collider _collision)
+	{
+		if (_collision.gameObject.CompareTag ("Cover"))
+		{
+		//Debug.Log ("adding to list");
+		coverList.Add (_collision.gameObject);
+		}
+	}
+
+	void OnTriggerExit (Collider _collision)
+	{
+		if (_collision.gameObject.CompareTag ("Cover"))
+		{
+			if(validCover.Contains(_collision.gameObject))
+				validCover.Remove(_collision.gameObject);
+			//Debug.Log ("removing from list");
+			coverList.Remove (_collision.gameObject);
+		}
 	}
 
 }

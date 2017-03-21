@@ -8,6 +8,8 @@ public class Order_MoveState : ISquadState
 	//Useful variables here
 
 	public GameObject player;
+	private Vector3 Destination;
+	private RaycastHit hit;
 
 	public Order_MoveState (StatePatternSquad statePatternSquad)
 	{
@@ -20,6 +22,8 @@ public class Order_MoveState : ISquadState
 	{
 		//Call fucntions you want to constantly repeat here
 		//Look ();
+
+		Debug.Log ("Order Move");
 		MoveTO();
 	}
 
@@ -65,12 +69,21 @@ public class Order_MoveState : ISquadState
 
 	public void MoveTO()
 	{
-		Vector3 ray;
-		RaycastHit hit;
+		Debug.Log ("moving to ?");
+		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-		if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100)) {
-			squad.transform.LookAt (hit.point);
-			squad.transform.Translate (hit.point);
+
+		if(Physics.Raycast(ray, out hit))
+		{
+			//hit.point.y = squad.agent.transform.position.y;
+
+			Destination.x = hit.point.x;
+			Destination.y = squad.agent.transform.position.y;
+			Destination.z = hit.point.z;
+
+			squad.transform.LookAt (Destination);
+			squad.agent.SetDestination (Destination);
+
 		}
 
 
