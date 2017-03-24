@@ -40,7 +40,7 @@ public class Pause_Script : MonoBehaviour {
     {
         //Debug.Log("Entered Pause Menu");
         Global_Script.Paused = true;
-        Debug.Log(Global_Script.Paused);
+       // Debug.Log(Global_Script.Paused);
         Time.timeScale = 0;
         Pause_Menu.GetComponent<Canvas>().enabled = true;
        //OnMouseDown();
