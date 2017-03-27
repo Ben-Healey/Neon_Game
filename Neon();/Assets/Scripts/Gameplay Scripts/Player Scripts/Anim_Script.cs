@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Anim_Script : MonoBehaviour {
-	public static AnimationClip idle;
-	string idleN;
+
+    GameObject Door_Anim;
 	// Use this for initialization
 	void Start () {
 //		Animator Anim;
@@ -15,12 +15,22 @@ public class Anim_Script : MonoBehaviour {
 		
 	}
 
-	public void Idle()
-	{
-		idleN = idle.name;
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            Door_Anim = GameObject.Find("SF_Door");
+            Door_Anim.GetComponent<Animation>().Play("open");
 
-		GetComponent<Animation> ().Play (idleN);
-		GetComponent<Animation> ().transform.Translate (0, 0, 0);
+        }
+    }
 
-	}
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            Door_Anim = GameObject.Find("SF_Door");
+            Door_Anim.GetComponent<Animation>().Play("close");
+        }
+    }
 }
