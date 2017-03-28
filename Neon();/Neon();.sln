@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neon();.CSharp", "Neon();.CSharp.csproj", "{6770AFF1-D718-5C89-DF9E-F4404966D50D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neon();.CSharp.Editor", "Neon();.CSharp.Editor.csproj", "{CC9448BA-E851-A21B-2CB0-C839141B1BA2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6770AFF1-D718-5C89-DF9E-F4404966D50D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6770AFF1-D718-5C89-DF9E-F4404966D50D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6770AFF1-D718-5C89-DF9E-F4404966D50D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6770AFF1-D718-5C89-DF9E-F4404966D50D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC9448BA-E851-A21B-2CB0-C839141B1BA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC9448BA-E851-A21B-2CB0-C839141B1BA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC9448BA-E851-A21B-2CB0-C839141B1BA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC9448BA-E851-A21B-2CB0-C839141B1BA2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
