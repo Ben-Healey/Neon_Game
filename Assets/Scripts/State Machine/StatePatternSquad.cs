@@ -52,7 +52,7 @@ public class StatePatternSquad : MonoBehaviour
 	{
 		currentState = idleState;
 		//currentState = orderMoveState;
-		MoveTo = GetComponent<characterController> ().getMOVETO();
+	//	MoveTo = GetComponent<characterController> ().getMOVETO();
 	//	squad = GameObject.FindGameObjectsWithTag ("squad");
 	//	enemy = GameObject.FindGameObjectsWithTag ("enemy");
 	}

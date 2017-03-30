@@ -20,6 +20,8 @@ public class CoverState : ISquadState
 	public GameObject enemy;
 	public GameObject[] cover;
 
+	private float vSpeed = 0;
+
 	//Useful variables here
 	void Start()
 	{
@@ -144,6 +146,8 @@ public class CoverState : ISquadState
 			bestTarget = player.transform;
 		}
 		//Debug.Log ("Moving to cover");
+		squad.myAnimator.SetFloat ("VSpeed", vSpeed++);
+
 		squad.agent.SetDestination (bestTarget.position);
 
 		//squad.transform.LookAt (bestTarget.position);

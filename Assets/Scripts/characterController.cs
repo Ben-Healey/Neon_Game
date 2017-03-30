@@ -7,7 +7,9 @@ public class characterController : MonoBehaviour {
 	private float strafe;
 	private float vSpeed = 0.0f;
 
-	public static bool MOVETO;
+	GameObject[] squad;
+
+	//public static bool MOVETO;
 
 	public float speed = 10.0f;
 	public float jumpSpeed = 100.0f;
@@ -17,7 +19,8 @@ public class characterController : MonoBehaviour {
 	void Start () {
 
 		Cursor.lockState = CursorLockMode.Locked;
-		MOVETO = false;
+		//MOVETO = false;
+		squad = GameObject.FindGameObjectsWithTag("Squad");
 	
 	}
 	
@@ -30,17 +33,19 @@ public class characterController : MonoBehaviour {
 
 		if (Input.GetKeyDown ("1"))
 		{
-			MOVETO = true;
+			squad [0].GetComponent<SquadCon> ().fol ();
+
+			//MOVETO = true;
 			//squad [0].GetComponent<ISquadState> ().OrderMoveState ();
 		}
 		if (Input.GetKeyDown ("2"))
 		{
-			MOVETO = false;
+			//MOVETO = false;
 		}	
 	}
 
-	public bool getMOVETO()
-	{
-		return MOVETO;
-	}
+//	public bool getMOVETO()
+//	{
+//		return MOVETO;
+//	}
 }

@@ -161,11 +161,11 @@ public class IdleState : ISquadState
 				squad.transform.rotation = Quaternion.LookRotation (newDir);
 				squad.agent.SetDestination (player.transform.position);
 
-				squad.myAnimator.SetFloat ("VSpeed", vSpeed++);
+				squad.myAnimator.SetFloat ("VSpeed", (vSpeed += 0.1f));
 			} else
 			{
-				squad.myAnimator.SetFloat ("VSpeed", 0);
-			}
+				squad.myAnimator.SetFloat ("VSpeed", (vSpeed = 0.0f));
+            }
 		}
 	}
 }
