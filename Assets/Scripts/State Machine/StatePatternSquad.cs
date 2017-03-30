@@ -20,7 +20,7 @@ public class StatePatternSquad : MonoBehaviour
 	[HideInInspector] public Transform followPlayer;
 	[HideInInspector] public ISquadState currentState;
 	[HideInInspector] public CoverState coverState;
-	[HideInInspector] public IdleState idleState;
+	public IdleState idleState;
 	[HideInInspector] public AttackState attackState;
 
 	//Order States
@@ -31,7 +31,7 @@ public class StatePatternSquad : MonoBehaviour
 
 	public NavMeshAgent agent;
 	public Animator myAnimator;
-
+    public GameObject projectile; 
 
 	private void Awake()
 	{
@@ -51,14 +51,16 @@ public class StatePatternSquad : MonoBehaviour
 	void Start ()
 	{
 		currentState = idleState;
-		//currentState = orderMoveState;
-	//	MoveTo = GetComponent<characterController> ().getMOVETO();
-	//	squad = GameObject.FindGameObjectsWithTag ("squad");
-	//	enemy = GameObject.FindGameObjectsWithTag ("enemy");
-	}
-	
-	// Update is called once per frame
-	void Update ()
+        
+
+        //currentState = orderMoveState;
+        //	MoveTo = GetComponent<characterController> ().getMOVETO();
+        //	squad = GameObject.FindGameObjectsWithTag ("squad");
+        //	enemy = GameObject.FindGameObjectsWithTag ("enemy");
+    }
+
+    // Update is called once per frame
+    void Update ()
 	{
 		if (MoveTo == true)
 		{

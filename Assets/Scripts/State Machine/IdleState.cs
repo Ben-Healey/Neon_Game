@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.AI;
 
-public class IdleState : ISquadState
+public class IdleState : MonoBehaviour, ISquadState
 {
 	private readonly StatePatternSquad squad;
 
@@ -18,8 +18,9 @@ public class IdleState : ISquadState
 	public float distance;
 	public float dist = 10.0f;
 
+    public GameObject projectile;
 
-	public float minRange = 3.0f;
+    public float minRange = 3.0f;
 	public float maxRange = 30.0f;
 	public float separation;
 	public Vector3 DistancE;
@@ -99,14 +100,35 @@ public class IdleState : ISquadState
 			//Debug.Log ("Enemy spotted");
 			squad.followPlayer = hit.transform;
 			Debug.DrawRay (squad.transform.position, squad.followPlayer.position, Color.red);
-			//Debug.Log ("Switching to cover state");
-			ToCoverState ();
+            //Debug.Log ("Switching to cover state");
+            //ToCoverState ();
+            shoot();
 		}
 
 		follow ();
 
 		//Debug.Log ("No enemies in sight");
 	}
+
+
+    private void shoot()
+    {
+        GameObject bullet;
+        GameObject muz = GameObject.Find("muzzle");
+        GameObject pro = squad.projectile;
+        Rigidbody rb;
+        bullet = Instantiate(pro, muz.transform.position, Quaternion.identity);
+        rb = bullet.GetComponent<Rigidbody>();
+        //bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 2000);
+
+        squad.transform.LookAt(enemy.transform.position);
+
+        rb.AddForce(muz.transform.forward * 5000);
+
+        Destroy(bullet, 5);
+
+    }
+
 
 
 	private void follow()
