@@ -119,9 +119,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Neon%28%29%3b.CSharp.csproj">
+    <ProjectReference Include="Neon()">
       <Project>{6770AFF1-D718-5C89-DF9E-F4404966D50D}</Project>
-      <Name>Neon%28%29%3b.CSharp</Name>
+      <Name>Neon();.CSharp</Name>
     </ProjectReference>
     <ProjectReference Include=".CSharp.csproj">
       <Project>{6770AFF1-D718-5C89-DF9E-F4404966D50D}</Project>

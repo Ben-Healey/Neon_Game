@@ -92,6 +92,7 @@
     <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Fire_Script.cs" />
     <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Puzzle_Script.cs" />
     <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Take_Script.cs" />
+    <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Use_Script.cs" />
     <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\canMouseLook.cs" />
     <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\playerMovement.cs" />
     <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\player_stats.cs" />
