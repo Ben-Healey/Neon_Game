@@ -6,8 +6,8 @@ using System.Collections;
 [RequireComponent (typeof(CharacterController))]
 public class playerMovement : MonoBehaviour {
 	
-	public float walkSpeed = 6.0f;
-	public float runSpeed = 11.0f;
+	public float walkSpeed = 10.0f;
+	public float runSpeed = 15.0f;
 
 	// Normally, moving diagonally will multiply forwards and side movement moving you at 1.4x speed at diagonal
 	public bool limitDiagonalSpeed = true;

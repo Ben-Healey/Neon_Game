@@ -8,8 +8,8 @@ public class UI_Checker : MonoBehaviour {
 	Scene currentScene;
 	GameObject D;
 	GameObject[] enemy;
-	float movementSpeed = 1.0f;
-	float timeleft = 5.0f;
+	//float movementSpeed = 1.0f;
+	//float timeleft = 5.0f;
 	//Doesnt not work atm
 	//IEnumerator Move_Door(){
 		//timeleft -= Time.deltaTime;
