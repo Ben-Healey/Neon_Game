@@ -5,14 +5,16 @@ using UnityEngine.UI;
 
 public class Pause_Script : MonoBehaviour {
 	GameObject Pause_Menu;
-	GameObject Player_UI;
+	//GameObject Player_UI; //No Longer needed
 	GameObject Code_Text;
+    GameObject Gun;
 
 	// Use this for initialization
 	void Start () {
 		Pause_Menu = GameObject.Find ("Pause");
-		Player_UI = GameObject.Find ("UICanvas");
-		Pause_Menu.GetComponent<Canvas> ().enabled = false; // Error is thrown if object is left inactive need to rememeber to active it :L
+		//Player_UI = GameObject.Find ("UICanvas");
+        Gun = GameObject.Find("Gun");
+		Pause_Menu.GetComponent<Canvas> ().enabled = false; // Error is thrown if object is left inactive need to rememeber to active it
 	}
 
     void FixedUpdate()
@@ -21,15 +23,6 @@ public class Pause_Script : MonoBehaviour {
     }
 	// Update is called once per frame
 	void Update () {
-        //if (Input.GetButtonDown ("escape")) {
-        //          //Debug.Log ("Entered Pause Menu");
-        //          //Global_Script.Paused = true;
-        //          //Debug.Log (Global_Script.Paused);
-        //          //Time.timeScale = 0;
-        //          //Pause_Menu.GetComponent<Canvas> ().enabled = true;
-        //          //OnMouseDown ();
-        //          Pause();
-        //}
         if (Input.GetButtonDown("escape"))
         {
             Pause();
@@ -38,12 +31,10 @@ public class Pause_Script : MonoBehaviour {
 
     void Pause()
     {
-        //Debug.Log("Entered Pause Menu");
         Global_Script.Paused = true;
-       // Debug.Log(Global_Script.Paused);
         Time.timeScale = 0;
         Pause_Menu.GetComponent<Canvas>().enabled = true;
-       //OnMouseDown();
+        Gun.SetActive(false);
     }
 	
 	void OnMouseDown()
@@ -54,6 +45,7 @@ public class Pause_Script : MonoBehaviour {
             Time.timeScale = 1;
             //	//Debug.Log ("Unpause");
             Global_Script.Paused = false;
+            Gun.SetActive(true);
             Pause_Menu.GetComponent<Canvas>().enabled = false;
         } else if (gameObject.name ==  "Save")
         {

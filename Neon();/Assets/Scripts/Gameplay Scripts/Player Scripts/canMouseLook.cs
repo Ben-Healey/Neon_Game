@@ -15,7 +15,7 @@ public class canMouseLook : MonoBehaviour {
 	public float maximumX = 360F;
 	public float minimumY = -60F;
 	public float maximumY = 60F;
-	float rotationY = 0F;
+	
 
 	Vector2 mouseLook;
 	Vector2 smoothV;
@@ -48,7 +48,7 @@ public class canMouseLook : MonoBehaviour {
 			smoothV.y = Mathf.Lerp (smoothV.y, md.y, 1f / smoothing);
 			mouseLook += smoothV;
 
-			mouseLook.y = Mathf.Clamp (mouseLook.y, -60.0f, 60.0f);
+			mouseLook.y = Mathf.Clamp (mouseLook.y, -90.0f, 90.0f);
 			transform.localRotation = Quaternion.AngleAxis (-mouseLook.y, Vector3.right);
 			character.transform.localRotation = Quaternion.AngleAxis (mouseLook.x, character.transform.up);
 //			if (axes == RotationAxes.MouseXAndY)
