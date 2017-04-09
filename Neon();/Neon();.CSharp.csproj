@@ -52,9 +52,6 @@
     <Reference Include="UnityEngine">
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Advertisements">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Advertisements.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -69,9 +66,6 @@
     </Reference>
     <Reference Include="UnityEngine.HoloLens">
       <HintPath>Library\UnityAssemblies\UnityEngine.HoloLens.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Purchasing">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VR">
       <HintPath>Library\UnityAssemblies\UnityEngine.VR.dll</HintPath>
@@ -90,12 +84,14 @@
     <Compile Include="Assets\Scripts\Gameplay Scripts\Misc\CameraFacingBillboard.cs" />
     <Compile Include="Assets\Scripts\Gameplay Scripts\Misc\Door_Test.cs" />
     <Compile Include="Assets\Scripts\Gameplay Scripts\Misc\Floor_Movement.cs" />
+    <Compile Include="Assets\Scripts\Gameplay Scripts\Misc\Spotted_Script.cs" />
     <Compile Include="Assets\Scripts\Gameplay Scripts\Misc\Spotted_Test.cs" />
     <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Anim_Script.cs" />
     <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Attributes.cs" />
     <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Bullet_Script.cs" />
     <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Crosshair_Script.cs" />
     <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Fire_Script.cs" />
+    <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Ladder_Script.cs" />
     <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Puzzle_Script.cs" />
     <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Take_Script.cs" />
     <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Use_Script.cs" />
@@ -114,6 +110,7 @@
     <Compile Include="Assets\Scripts\Menu Scripts\Pause_Script.cs" />
     <Compile Include="Assets\Scripts\Sound.cs" />
     <Compile Include="Assets\Scripts\Temp_Script.cs" />
+    <Compile Include="Assets\Scripts\UI Scripts\Pause_Code_Script.cs" />
     <Compile Include="Assets\Scripts\UI Scripts\UI_Checker.cs" />
     <Compile Include="Assets\Scripts\UI Scripts\UI_Text.cs" />
   </ItemGroup>
@@ -126,6 +123,7 @@
     <None Include="Assets\Text Files\Code.txt" />
     <None Include="Assets\Text Files\Combat.txt" />
     <None Include="Assets\Text Files\Next.txt" />
+    <None Include="Assets\Text Files\Pause_Code.txt" />
     <None Include="Assets\Text Files\Puzzle.txt" />
     <None Include="Assets\Text Files\Sec.txt" />
     <None Include="Assets\Text Files\Sqaud.txt" />
