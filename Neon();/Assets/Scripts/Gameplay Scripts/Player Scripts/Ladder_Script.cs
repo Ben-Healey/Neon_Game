@@ -34,6 +34,7 @@ public class Ladder_Script : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             canClimb = false;
+            player_move.enabled = true;
         }
     }
 
@@ -41,16 +42,28 @@ public class Ladder_Script : MonoBehaviour
     {
         if(canClimb == true)
         {
-            if(Input.GetKeyDown(KeyCode.W))
+            if(Input.GetKey(KeyCode.W))
             {
                 //Debug.Log("BUTTON PRESS");
-                rb.AddForce(Vector3.up * 200);
+                //rb.AddForce(Vector3.up * 200);
+                player.transform.Translate(Vector3.up * Time.deltaTime);
+               
             }
-            if(Input.GetKeyDown(KeyCode.S))
+            if(Input.GetKey(KeyCode.S))
             {
-                rb.AddForce(Vector3.down * 200);
+                //rb.AddForce(Vector3.down * 200);
+                player.transform.Translate(Vector3.down * 1);
+            }
+            if(Input.GetKeyDown(KeyCode.A))
+            {
+                player.transform.Translate(Vector3.left * 1);
+            }
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                player.transform.Translate(Vector3.right * 1);
             }
         }
+
     }
 
 }
