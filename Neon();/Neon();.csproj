@@ -18,7 +18,7 @@
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.5.0f3</UnityVersion>
     <RootNamespace></RootNamespace>
-    <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
+    <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -73,13 +73,11 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
-    <Reference Include="Mono.Cecil">
-      <HintPath>Library\UnityAssemblies\Mono.Cecil.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Pause_Code_Script.cs" />
     <Compile Include="Assets\Scripts\Colour_Changer.cs" />
+    <Compile Include="Assets\Scripts\Gameplay Scripts\Enemy Scripts\AITakeCover.cs" />
+    <Compile Include="Assets\Scripts\Gameplay Scripts\Enemy Scripts\CoverScript.cs" />
     <Compile Include="Assets\Scripts\Gameplay Scripts\Enemy Scripts\Cover_Enabler.cs" />
     <Compile Include="Assets\Scripts\Gameplay Scripts\Enemy Scripts\Enemy_Find_Cover.cs" />
     <Compile Include="Assets\Scripts\Gameplay Scripts\Light Scripts\Light_Script.cs" />
@@ -95,6 +93,7 @@
     <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Bullet_Script.cs" />
     <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Crosshair_Script.cs" />
     <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Fire_Script.cs" />
+    <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Ladder_Script.cs" />
     <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Puzzle_Script.cs" />
     <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Take_Script.cs" />
     <Compile Include="Assets\Scripts\Gameplay Scripts\Player Scripts\Use_Script.cs" />
@@ -113,6 +112,7 @@
     <Compile Include="Assets\Scripts\Menu Scripts\Pause_Script.cs" />
     <Compile Include="Assets\Scripts\Sound.cs" />
     <Compile Include="Assets\Scripts\Temp_Script.cs" />
+    <Compile Include="Assets\Scripts\UI Scripts\Pause_Code_Script.cs" />
     <Compile Include="Assets\Scripts\UI Scripts\UI_Checker.cs" />
     <Compile Include="Assets\Scripts\UI Scripts\UI_Text.cs" />
   </ItemGroup>
