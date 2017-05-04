@@ -122,9 +122,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Neon()">
+    <ProjectReference Include="Neon%28%29%3b.csproj">
       <Project>{72BD0ED7-32A0-D9F0-0FDB-04A077EF6EE3}</Project>
-      <Name>Neon();</Name>
+      <Name>Neon%28%29%3b</Name>
     </ProjectReference>
     <ProjectReference Include=".csproj">
       <Project>{72BD0ED7-32A0-D9F0-0FDB-04A077EF6EE3}</Project>

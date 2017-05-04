@@ -79,7 +79,7 @@ public class AITakeCover : MonoBehaviour
             if (inCover)
             {
                 FaceTarget(gameObject);
-                Shoot();
+                //Shoot();
             }
         }
 
@@ -205,7 +205,11 @@ public class AITakeCover : MonoBehaviour
     {
         RaycastHit hit;
         Vector3 playerVector = player.transform.position - transform.position;
-        return (Physics.Raycast(transform.position, playerVector, out hit)) && (hit.transform.gameObject.tag == "Player");
+        bool test = false;
+        if((Physics.Raycast(transform.position, playerVector, out hit)) && (hit.transform.gameObject.tag == "Player"))
+            test=true;
+        ///Debug.DrawRay(transform.position,playerVector);
+        return test;
     }
 
     bool FacingSquad(Vector3[] inVectors)

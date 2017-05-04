@@ -84,10 +84,6 @@ public class UI_Checker : MonoBehaviour {
 			Destroy(D);
 			Checker.Checker_Function (other.gameObject.name);
 
-			for (int i = 0; i < enemy.Length; i++) {
-				enemy [i].GetComponent<Enemy_Find_Cover> ().setIdle ();
-			}
-
 		}
 		if (other.gameObject.name == "Exit") {
 			SceneManager.LoadScene ("Set_Up");

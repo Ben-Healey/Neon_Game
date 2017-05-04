@@ -21,8 +21,8 @@ public class CoverScript : MonoBehaviour {
 	public bool full;
     public GameObject usedBy;
 
-    static int squadLayer = 9;
-    static int enemyLayer = 10;
+    static int squadLayer = 15;
+    static int enemyLayer = 16;
 
     int enemyMask = ~(1 << enemyLayer);
     int squadMask = ~(1 << squadLayer);
