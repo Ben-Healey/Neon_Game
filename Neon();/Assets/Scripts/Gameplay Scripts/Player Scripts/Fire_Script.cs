@@ -28,9 +28,8 @@ public class Fire_Script : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-		Vector3 forward = transform.TransformDirection(Vector3.forward) * 10;
+		Vector3 forward = transform.TransformDirection(Vector3.forward) * 20;
 		Debug.DrawRay (transform.position, forward, Color.green);
-		//Anim.Idle ();
 		if (Physics.Raycast (ray, out ray_hit)) {
 			if (ray_hit.collider.tag == "Enemy") {
 				Fire_Enemy ();
@@ -90,7 +89,9 @@ public class Fire_Script : MonoBehaviour {
 		if (ray_hit.collider.tag == "Sqaud") {
 			Debug.Log ("Healing Sqaud Member");
 		} else {
-			Debug.Log ("Healing Player");
+            float currrenthealth = player_script.getHealth();
+            player_script.setHealth(currrenthealth + 10); 
+
 		}
 	}
 }

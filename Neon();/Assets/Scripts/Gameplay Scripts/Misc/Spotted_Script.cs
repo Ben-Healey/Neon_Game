@@ -5,9 +5,12 @@ using UnityEngine;
 public class Spotted_Script : MonoBehaviour {
     Light Spot_Light;
     private Alarm_Script Alarm;
-
+    bool inlight;
+    float time = 0;
     IEnumerator Colour_Change()
     {
+        inlight = false;
+        Debug.Log("ALARM");
         Global_Script.Alarm = true;
         Spot_Light.color = Color.red;
         Alarm.AlarmSetoff();
@@ -22,23 +25,32 @@ public class Spotted_Script : MonoBehaviour {
 
 	}
 
+
+    void Update()
+    {
+        if(inlight == true)
+        { 
+			time += Time.deltaTime;
+			Debug.Log(time);
+			Debug.Log("Camera Space Has Been Entered");
+			Spot_Light.color = Color.yellow;
+                
+			if (time >= 5){
+               StartCoroutine(Colour_Change());
+            }
+        }
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
-        float time = Time.deltaTime;
-        if(other.gameObject.tag == "Player")
-        {
-            Debug.Log("Camera Space Has Been Entered");
-            Spot_Light.color = Color.yellow;
-            if(time >  5)
-            {
-                
-            }
-
-        }
+        time = 0;
+        inlight = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
+        inlight = false;
         if(other.gameObject.tag == "Player")
         {
             Debug.Log("LEAVING CAMERA SPACE");

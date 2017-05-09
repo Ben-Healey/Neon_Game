@@ -35,6 +35,7 @@
         uniform float _rgb2G = 1.0f; // 1.0f
         uniform float _rgb2B = 1.0f; // 1.0f
         uniform float _dotWeight = 2.0f; // 2.0f
+		
          float2 RadialDistortion(float2 coord)
         {
             coord *= _TextureSize / _InputSize;
@@ -58,7 +59,7 @@
             _InputSize = _TextureSize;
             _Factor = _Texcoord.x * _TextureSize.x * _OutputSize.x / _InputSize.x;
          
-            //float4 ScreenGamma = pow(tex2D(_MainTex, _Texcoord), _Gamma);
+            
          
             #ifdef CURVATURE
             float2 xy = RadialDistortion(_Texcoord);
@@ -84,7 +85,7 @@
             res *= dotMaskWeights;
          
             return float4(pow(res, float3(1.0f / _Gamma, 1.0f / _Gamma, 1.0f / _Gamma)), 1.0f);
-            //return float4(pow(res, float3(1.0f / ScreenGamma.x, 1.0f / ScreenGamma.y, 1.0f / ScreenGamma.z)), 1.0f);
+     
          
          
         }

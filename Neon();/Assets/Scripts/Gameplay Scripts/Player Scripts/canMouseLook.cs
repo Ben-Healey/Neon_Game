@@ -6,7 +6,7 @@ public class canMouseLook : MonoBehaviour {
 
 	public float sensitivity = 5.0f;
 	public float smoothing = 2.0f;
-	//new stuff
+	//No Longer Used
 	public enum RotationAxes { MouseXAndY = 0, MouseX = 1, MouseY = 2 }
 	public RotationAxes axes = RotationAxes.MouseXAndY;
 	public float sensitivityX = 15F;
@@ -23,13 +23,7 @@ public class canMouseLook : MonoBehaviour {
 	GameObject character;
 	Rigidbody rb;
 	// Use this for initialization
-	void Start () {
-//		rb = character.GetComponent<Rigidbody> ();
-//		Debug.Log (rb.ToString());
-//		if (rb) {
-//			rb.freezeRotation = true;
-//		}
-			
+	void Start () {			
 		character = this.transform.parent.gameObject;
 
 	}
@@ -39,8 +33,8 @@ public class canMouseLook : MonoBehaviour {
 		if (Global_Script.Paused == false) {
 			Cursor.lockState = CursorLockMode.Locked;
 			Cursor.visible = false;
-////			// MD = Mouse Delta
-			var md = new Vector2 (Input.GetAxisRaw ("Mouse X"), Input.GetAxisRaw ("Mouse Y"));
+     		// MD = Mouse Delta
+			Vector2 md = new Vector2 (Input.GetAxisRaw ("Mouse X"), Input.GetAxisRaw ("Mouse Y"));
 
 			md = Vector2.Scale (md, new Vector2 (sensitivity * smoothing, sensitivity * smoothing));
 
@@ -51,27 +45,7 @@ public class canMouseLook : MonoBehaviour {
 			mouseLook.y = Mathf.Clamp (mouseLook.y, -90.0f, 90.0f);
 			transform.localRotation = Quaternion.AngleAxis (-mouseLook.y, Vector3.right);
 			character.transform.localRotation = Quaternion.AngleAxis (mouseLook.x, character.transform.up);
-//			if (axes == RotationAxes.MouseXAndY)
-//			{
-//				float rotationX = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * sensitivityX;
-//
-//				rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
-//				rotationY = Mathf.Clamp (rotationY, minimumY, maximumY);
-//
-//				transform.localEulerAngles = new Vector3(-rotationY, rotationX, 0);
-//			}
-//			else if (axes == RotationAxes.MouseX)
-//			{
-//				transform.Rotate(0, Input.GetAxis("Mouse X") * sensitivityX, 0);
-//			}
-//			else
-//			{
-//				rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
-//				rotationY = Mathf.Clamp (rotationY, minimumY, maximumY);
-//
-//				transform.localEulerAngles = new Vector3(-rotationY, transform.localEulerAngles.y, 0);
-//			}
-//
+
 		} else if (Global_Script.Paused == true) {
 			Cursor.lockState = CursorLockMode.Confined;
 			Cursor.visible = true;

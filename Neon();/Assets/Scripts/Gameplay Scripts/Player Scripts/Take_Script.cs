@@ -41,14 +41,7 @@ public class Take_Script : MonoBehaviour {
 	void Red_Light(string c)
 	{
 		if (Input.GetButtonDown ("Take")) {
-			Colour = c;
-			player_script.Store_Colour (Colour);
-		// Broken code at the moment need to fix!! 
-		// if the player tries to take a colour while already having a colour this should resest colour etc but does not
-		//	ColourBar.fillAmount = 1;
-		//	F_Script.shot = 0;
-			//ColourBar.fillAmount = 1;
-		//	Fire.shot = 0;
+			player_script.Store_Colour (c);
 			ColourBar.color = Color.red;
 			player_script.sethasColour (true);
 			if (player_script.gethasColour() == true && Input.GetButtonDown("Take")) {
@@ -63,8 +56,7 @@ public class Take_Script : MonoBehaviour {
 	{
 		if(Input.GetButtonDown("Take"))
 		{
-			Colour = c;
-			player_script.Store_Colour (Colour);
+			player_script.Store_Colour (c);
 			//ColourBar.fillAmount = 1;
 			//Fire.shot = 0;
 			ColourBar.color = Color.green;
@@ -80,13 +72,9 @@ public class Take_Script : MonoBehaviour {
 	void Blue_Light(string c)
 	{
 		if (Input.GetButtonDown ("Take")) {
-			Colour = c;
-			player_script.Store_Colour (Colour);
+
+			player_script.Store_Colour (c);
 			ColourBar.color = Color.blue;
-			//ColourBar.fillAmount = 1;
-			//Fire.shot = 0;
-	//		ColourBar.fillAmount = 1;
-	//		F_Script.shot = 0;
 			player_script.sethasColour (true);
 
 			if (player_script.gethasColour () == true && Input.GetButtonDown ("Take")) {

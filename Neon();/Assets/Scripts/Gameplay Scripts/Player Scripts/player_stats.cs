@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 public class player_stats : MonoBehaviour {
 	public string Colour;
 	public float Health;
@@ -55,7 +57,7 @@ public class player_stats : MonoBehaviour {
 		Health = x;
 	}
 
-	public float Damage_player()
+	public void Damage_player()
 	{
 		float damage = 5;
 
@@ -63,15 +65,15 @@ public class player_stats : MonoBehaviour {
 		Player_Healthbar.fillAmount = getHealth () / Max_Playerhealth;
 
 		if (getHealth () == 0) {
-			PlayerisDead ();
+		    PlayerisDead ();
 		}
-		return 0;
 	}
 
 
 	public void PlayerisDead()
 	{
 		Debug.Log ("Player is Dead!");
-		//Need to add code that will either restart level or figure out how to add a check point in
+        int scene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(scene, LoadSceneMode.Single);
 	}
 }

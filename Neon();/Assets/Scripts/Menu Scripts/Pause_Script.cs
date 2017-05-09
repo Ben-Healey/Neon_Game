@@ -55,23 +55,7 @@ public class Pause_Script : MonoBehaviour {
             Time.timeScale = 1;
             Application.Quit();
         }
-        //switch (gameObject.name)
-        //{
-        //    case "Resume":
-        //        Time.timeScale = 1;
-        //        //Debug.Log ("Unpause");
-        //        Global_Script.Paused = false;
-        //        Pause_Menu.GetComponent<Canvas>().enabled = false;
-        //        break;
-        //    case "Save":
-        //        //Debug.Log ("Need Save Code");
-        //        break;
-        //    case "Exit":
-        //        //	Debug.Log ("Quiting");
-        //        Time.timeScale = 1;
-        //        Application.Quit();
-        //        break;
-        //}
+
 
     }
 }

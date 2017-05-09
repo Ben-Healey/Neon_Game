@@ -12,6 +12,8 @@ public class Attributes : MonoBehaviour {
 	void Start () {
 		Health = 100;
 		MaxHealth = 100;
+		Squad_health = 100;
+		
 		Heathbar = this.transform.FindChild ("EnemyCanvas").FindChild ("HealthBG").FindChild ("Health").GetComponent<Image> ();
 	}
 
@@ -19,12 +21,16 @@ public class Attributes : MonoBehaviour {
 	void Update () {
 
 	}
-
+	
+	public float Get_Sqaud_Health(){
+		return Squad_health;
+	}
+	
 	public float Get_Enemy_Health(){
 		return Health;
 	}
 
-	public int damage(){
+	public void damage(){
 		Health -= 25;
 
 
@@ -33,7 +39,7 @@ public class Attributes : MonoBehaviour {
 			Global_Script.Destoryed_Targets += 1;
 		}
 		Heathbar.fillAmount = Health / MaxHealth;
-		return 0;
+		//return 0;
 	}
 
 	public bool Died(){

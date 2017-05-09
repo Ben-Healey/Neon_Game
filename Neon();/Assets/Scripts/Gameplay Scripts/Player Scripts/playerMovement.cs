@@ -6,7 +6,7 @@ using System.Collections;
 [RequireComponent (typeof(CharacterController))]
 public class playerMovement : MonoBehaviour {
 	
-	public float walkSpeed = 10.0f;
+	public float walkSpeed = 13.0f;
 	public float runSpeed = 15.0f;
 
 	// Normally, moving diagonally will multiply forwards and side movement moving you at 1.4x speed at diagonal
@@ -15,8 +15,6 @@ public class playerMovement : MonoBehaviour {
 	public bool toggleRun = true;
 	public float jumpSpeed = 8.0f;
 	public float gravity = 20.0f;
-	// How many units can you fall before taking fall damage (change to "infinity" in Inspector to disable)
-	public float fallDamageLimit = 10.0f;
 	// Prevents standard character controllers from bouncing when moving on slopes
 	public float antiBumpFactor = .75f;
 	// Number of physics frames you must be grounded before jumping again - 0 enables BH
@@ -50,12 +48,6 @@ public class playerMovement : MonoBehaviour {
 
 			if (grounded) {
 
-				if (falling) {
-					falling = false;
-					if (myTransform.position.y < fallStartHeight - fallDamageLimit)
-						FallDamageAlert (fallStartHeight - myTransform.position.y);
-				}
-
 				if (!toggleRun) {
 					speed = Input.GetButton ("Run") ? runSpeed : walkSpeed;
 				}
@@ -71,12 +63,8 @@ public class playerMovement : MonoBehaviour {
 					moveDirection.y = jumpSpeed;
 					jumpTimer = 0;
 				}
-			} else {
-				if (!falling) { // Check every frame whether we are falling, as it gets reset when we are grounded
-					falling = true;
-					fallStartHeight = myTransform.position.y;
-				}
-			}
+			} 
+
 			// Apply gravity movement
 			moveDirection.y -= gravity * Time.deltaTime;
 
@@ -91,19 +79,6 @@ public class playerMovement : MonoBehaviour {
 			// FixedUpdate may not run every frame and might miss a toggle to toggleRun, so it should be checked in Update instead
 			if (toggleRun && grounded && Input.GetButtonDown ("Run"))
 				speed = (speed == walkSpeed ? runSpeed : walkSpeed);
-
-			if (Input.GetButtonDown ("Crouch")) {
-				int cr = -1;
-				moveDirection.y -= cr * Time.deltaTime;
-			}
 		}
-	}
-
-	void OnControllerColliderHit (ControllerColliderHit hit) {
-		// contactPoint = hit.point;
-	}
-
-	void FallDamageAlert(float fallDistance) {
-		Debug.Log ("Falling damage taken - went " + fallDistance + "units"); 
 	}
 }
